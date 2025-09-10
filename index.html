@@ -8,11 +8,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Custom CSS for animations and effects */
+        :root {
+            --primary: #3b82f6;
+            --secondary: #8b5cf6;
+            --accent: #10b981;
+        }
+        
         .gradient-text {
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
         }
         
         .card-hover:hover {
@@ -31,7 +45,7 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background-color: #3b82f6;
+            background-color: var(--primary);
             transition: width 0.3s ease;
         }
         
@@ -48,6 +62,50 @@
         .floating {
             animation: float 3s ease-in-out infinite;
         }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .timeline-item {
+            opacity: 0;
+        }
+        
+        .progress-bar {
+            transition: width 1s ease-in-out;
+        }
+        
+        .skill-card:hover .skill-icon {
+            transform: scale(1.1);
+        }
+        
+        .skill-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid var(--primary);
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary); }
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans antialiased">
@@ -62,6 +120,8 @@
                     <a href="#home" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 text-sm font-medium">Home</a>
                     <a href="#about" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 text-sm font-medium">About</a>
                     <a href="#skills" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 text-sm font-medium">Skills</a>
+                    <a href="#certifications" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 text-sm font-medium">Certifications</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 text-sm font-medium">Experience</a>
                     <a href="#projects" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 text-sm font-medium">Projects</a>
                     <a href="#contact" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 text-sm font-medium">Contact</a>
                 </div>
@@ -81,6 +141,8 @@
                 <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">Home</a>
                 <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">About</a>
                 <a href="#skills" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">Skills</a>
+                <a href="#certifications" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">Certifications</a>
+                <a href="#experience" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">Experience</a>
                 <a href="#projects" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">Projects</a>
                 <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">Contact</a>
             </div>
@@ -92,16 +154,16 @@
         <div class="flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 mb-10 md:mb-0">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
-                    Hi, I'm <span class="gradient-text">Gideon</span>
+                    Hi, I'm <span class="gradient-text">Gideon Muchina</span>
                 </h1>
-                <h2 class="text-2xl md:text-3xl text-gray-600 mb-6">
+                <h2 class="text-2xl md:text-3xl text-gray-600 mb-6 typewriter">
                     Full Stack Developer & IT Specialist
                 </h2>
                 <p class="text-lg text-gray-500 mb-8 max-w-lg">
                     I build exceptional digital experiences with clean, efficient code and innovative solutions.
                 </p>
                 <div class="flex space-x-4">
-                    <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
+                    <a href="#projects" class="gradient-bg hover:opacity-90 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
                         View My Work
                     </a>
                     <a href="#contact" class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition duration-300">
@@ -113,7 +175,7 @@
                 <div class="relative w-64 h-64 md:w-80 md:h-80">
                     <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-20 blur-xl"></div>
                     <img src="myself.png" 
-                         alt="Developer working" 
+                         alt="Gideon Muchina" 
                          class="relative w-full h-full object-cover rounded-full border-4 border-white shadow-lg floating">
                 </div>
             </div>
@@ -132,7 +194,7 @@
                     <div class="relative w-48 h-48 md:w-64 md:h-64">
                         <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg opacity-20 blur-xl"></div>
                         <img src="about.jpg" 
-                             alt="Profile" 
+                             alt="Gideon Muchina Profile" 
                              class="relative w-full h-full object-cover rounded-lg shadow-lg">
                     </div>
                 </div>
@@ -147,7 +209,7 @@
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                         <div class="flex items-start">
-                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4 skill-icon">
                                 <i class="fas fa-code text-blue-600"></i>
                             </div>
                             <div>
@@ -156,7 +218,7 @@
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                            <div class="bg-purple-100 p-3 rounded-full mr-4 skill-icon">
                                 <i class="fas fa-server text-purple-600"></i>
                             </div>
                             <div>
@@ -165,7 +227,7 @@
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                            <div class="bg-green-100 p-3 rounded-full mr-4 skill-icon">
                                 <i class="fas fa-shield-alt text-green-600"></i>
                             </div>
                             <div>
@@ -174,12 +236,12 @@
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                            <div class="bg-yellow-100 p-3 rounded-full mr-4 skill-icon">
                                 <i class="fas fa-mobile-alt text-yellow-600"></i>
                             </div>
                             <div>
-                                <h4 class="font-medium text-gray-800">Responsive Design</h4>
-                                <p class="text-gray-600 text-sm">Creating experiences that work on any device</p>
+                                <h4 class="font-medium text-gray-800">Networking</h4>
+                                <p class="text-gray-600 text-sm">Best in Networking and protocals</p>
                             </div>
                         </div>
                     </div>
@@ -188,13 +250,12 @@
                         <a href="https://github.com/Muchina27ke" class="flex items-center text-blue-600 hover:text-blue-800">
                             <i class="fab fa-github mr-2"></i> GitHub
                         </a>
-                        <a href="#" class="flex items-center text-blue-700 hover:text-blue-900">
+                        <a href="https://www.linkedin.com/in/gideon-muchina-9b027b261" class="flex items-center text-blue-700 hover:text-blue-900">
                             <i class="fab fa-linkedin mr-2"></i> LinkedIn
                         </a>
                         <a href="#" class="flex items-center text-blue-400 hover:text-blue-600">
                             <i class="fab fa-twitter mr-2"></i> Twitter
                         </a>
-                       
                     </div>
                 </div>
             </div>
@@ -213,7 +274,7 @@
             
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 <!-- Skill Card 1 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover">
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover skill-card">
                     <div class="text-blue-500 mb-4 text-4xl">
                         <i class="fab fa-js"></i>
                     </div>
@@ -221,14 +282,14 @@
                     <p class="text-gray-600 text-sm">Advanced knowledge of ES6+, frameworks, and tooling</p>
                     <div class="mt-4">
                         <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-blue-500 h-2 rounded-full" style="width: 90%"></div>
+                            <div class="bg-blue-500 h-2 rounded-full progress-bar" style="width: 90%"></div>
                         </div>
                         <span class="text-xs text-gray-500 mt-1">90%</span>
                     </div>
                 </div>
                 
                 <!-- Skill Card 2 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover">
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover skill-card">
                     <div class="text-blue-400 mb-4 text-4xl">
                         <i class="fab fa-react"></i>
                     </div>
@@ -236,14 +297,14 @@
                     <p class="text-gray-600 text-sm">Building interactive UIs with React ecosystem</p>
                     <div class="mt-4">
                         <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-blue-400 h-2 rounded-full" style="width: 85%"></div>
+                            <div class="bg-blue-400 h-2 rounded-full progress-bar" style="width: 85%"></div>
                         </div>
                         <span class="text-xs text-gray-500 mt-1">85%</span>
                     </div>
                 </div>
                 
                 <!-- Skill Card 3 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover">
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover skill-card">
                     <div class="text-green-500 mb-4 text-4xl">
                         <i class="fab fa-node-js"></i>
                     </div>
@@ -251,14 +312,14 @@
                     <p class="text-gray-600 text-sm">Server-side JavaScript and API development</p>
                     <div class="mt-4">
                         <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-green-500 h-2 rounded-full" style="width: 88%"></div>
+                            <div class="bg-green-500 h-2 rounded-full progress-bar" style="width: 88%"></div>
                         </div>
                         <span class="text-xs text-gray-500 mt-1">88%</span>
                     </div>
                 </div>
                 
                 <!-- Skill Card 4 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover">
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover skill-card">
                     <div class="text-purple-500 mb-4 text-4xl">
                         <i class="fas fa-database"></i>
                     </div>
@@ -266,14 +327,14 @@
                     <p class="text-gray-600 text-sm">SQL databases design and optimization</p>
                     <div class="mt-4">
                         <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-purple-500 h-2 rounded-full" style="width: 82%"></div>
+                            <div class="bg-purple-500 h-2 rounded-full progress-bar" style="width: 82%"></div>
                         </div>
                         <span class="text-xs text-gray-500 mt-1">82%</span>
                     </div>
                 </div>
                 
                 <!-- Skill Card 5 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover">
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover skill-card">
                     <div class="text-yellow-500 mb-4 text-4xl">
                         <i class="fab fa-aws"></i>
                     </div>
@@ -281,14 +342,14 @@
                     <p class="text-gray-600 text-sm">Cloud architecture and serverless applications</p>
                     <div class="mt-4">
                         <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-yellow-500 h-2 rounded-full" style="width: 75%"></div>
+                            <div class="bg-yellow-500 h-2 rounded-full progress-bar" style="width: 75%"></div>
                         </div>
                         <span class="text-xs text-gray-500 mt-1">75%</span>
                     </div>
                 </div>
                 
                 <!-- Skill Card 6 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover">
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover skill-card">
                     <div class="text-pink-500 mb-4 text-4xl">
                         <i class="fab fa-docker"></i>
                     </div>
@@ -296,14 +357,14 @@
                     <p class="text-gray-600 text-sm">Containerization and microservices architecture</p>
                     <div class="mt-4">
                         <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-pink-500 h-2 rounded-full" style="width: 80%"></div>
+                            <div class="bg-pink-500 h-2 rounded-full progress-bar" style="width: 80%"></div>
                         </div>
                         <span class="text-xs text-gray-500 mt-1">80%</span>
                     </div>
                 </div>
                 
                 <!-- Skill Card 7 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover">
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover skill-card">
                     <div class="text-red-500 mb-4 text-4xl">
                         <i class="fab fa-python"></i>
                     </div>
@@ -311,14 +372,14 @@
                     <p class="text-gray-600 text-sm">Scripting, automation, and data analysis</p>
                     <div class="mt-4">
                         <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-red-500 h-2 rounded-full" style="width: 78%"></div>
+                            <div class="bg-red-500 h-2 rounded-full progress-bar" style="width: 78%"></div>
                         </div>
                         <span class="text-xs text-gray-500 mt-1">78%</span>
                     </div>
                 </div>
                 
                 <!-- Skill Card 8 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover">
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover skill-card">
                     <div class="text-indigo-500 mb-4 text-4xl">
                         <i class="fas fa-lock"></i>
                     </div>
@@ -326,9 +387,273 @@
                     <p class="text-gray-600 text-sm">Secure coding practices and vulnerability testing</p>
                     <div class="mt-4">
                         <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-indigo-500 h-2 rounded-full" style="width: 85%"></div>
+                            <div class="bg-indigo-500 h-2 rounded-full progress-bar" style="width: 85%"></div>
                         </div>
                         <span class="text-xs text-gray-500 mt-1">85%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-16 bg-white px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-4">
+                My <span class="gradient-text">Certifications</span>
+            </h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+                Here are some of the professional certifications I've earned to validate my skills and knowledge.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Java Certification -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 card-hover">
+                    <div class="relative h-48 overflow-hidden gradient-bg flex items-center justify-center">
+                        <div class="text-white text-6xl">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-blue-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">Programming</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Java Programming Certification</h3>
+                        <h4 class="text-lg font-medium text-gray-700 mb-2">Kenswed TVET</h4>
+                        <div class="flex items-center text-gray-500 text-sm mb-4">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            <span>2023</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Certified in Java programming fundamentals, object-oriented programming concepts, and application development.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <a href="../Gideon-Muchina-Java-Cert.pdf" class="text-blue-600 hover:text-blue-800 font-medium flex items-center" download>
+                                Download Certificate <i class="fas fa-download ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+ 
+            
+  
+             <!-- Hikvision Certification Card -->
+<div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 card-hover">
+    <div class="relative h-48 overflow-hidden gradient-bg flex items-center justify-center" style="background: linear-gradient(135deg, #012b69 0%, #2c5aa0 100%);">
+        <div class="text-white text-6xl">
+            <i class="fas fa-video"></i>
+        </div>
+        <div class="absolute bottom-4 left-4">
+            <span class="bg-blue-700 text-white text-xs font-medium px-2.5 py-0.5 rounded">Security Technology</span>
+        </div>
+    </div>
+    <div class="p-6">
+        <h3 class="text-xl font-bold text-gray-900 mb-2">Hikvision Certification</h3>
+        <h4 class="text-lg font-medium text-gray-700 mb-2">Hikvision Technical Training</h4>
+        <div class="flex items-center text-gray-500 text-sm mb-4">
+            <i class="far fa-calendar-alt mr-2"></i>
+            <span>2025</span>
+        </div>
+        <p class="text-gray-600 mb-4">
+            Certified in Hikvision security systems, including installation, configuration, and maintenance of surveillance equipment and IP networks
+        </p>
+        <div class="flex justify-between items-center">
+            <a href="../Hikvision Cert-Gideon_Muchina.pdf" class="text-blue-700 hover:text-blue-900 font-medium flex items-center transition duration-150 ease-in-out" download>
+                Download Certificate <i class="fas fa-download ml-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
+            
+                <!-- Additional certification placeholder -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 card-hover">
+                    <div class="relative h-48 overflow-hidden bg-gray-100 flex items-center justify-center">
+                        <div class="text-gray-400 text-6xl">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-green-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">Coming Soon</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">AWS Cloud Practitioner</h3>
+                        <h4 class="text-lg font-medium text-gray-700 mb-2">Amazon Web Services</h4>
+                        <div class="flex items-center text-gray-500 text-sm mb-4">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            <span>In Progress</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Cloud fundamentals and AWS services knowledge certification for cloud practitioners.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <a href="#" class="text-gray-400 font-medium flex items-center">
+                                In Progress <i class="fas fa-hourglass-half ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-gray-50 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
+                Work <span class="gradient-text">Experience</span>
+            </h2>
+            
+            <div class="relative">
+                <!-- Timeline -->
+                <div class="border-l-2 border-blue-200 absolute h-full left-1/2 transform -translate-x-1/2 md:left-6 md:translate-x-0"></div>
+                
+                <!-- VITUIT Internship -->
+                <div class="relative mb-12 timeline-item">
+                    <div class="flex flex-col md:flex-row items-center md:items-start">
+                        <div class="flex-1 order-1 md:order-2 md:ml-8">
+                            <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 card-hover">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-xl font-bold text-gray-900">Networking Intern</h3>
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Current</span>
+                                </div>
+                                <h4 class="text-lg font-medium text-gray-700 mb-2">VITUIT, ISPMAN - Westlands, Nairobi</h4>
+                                <div class="flex items-center text-gray-500 text-sm mb-4">
+                                    <i class="far fa-calendar-alt mr-2"></i>
+                                    <span>2024 - Present</span>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Working with enterprise networking solutions, configuring routers and switches, implementing security protocols, and troubleshooting network issues for clients across various industries.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Cisco Networking</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Network Security</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Troubleshooting</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">VLAN Configuration</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Mikrotik and Ruijie</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 order-2 md:order-1 w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white shadow-md absolute left-1/2 transform -translate-x-1/2 md:left-6 md:translate-x-0">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IMFUTYO.FARM Experience -->
+                <div class="relative mb-12 timeline-item">
+                    <div class="flex flex-col md:flex-row items-center md:items-start">
+                        <div class="flex-1 order-1 md:order-2 md:ml-8">
+                            <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 card-hover">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-xl font-bold text-gray-900">Web Developer & Management</h3>
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Current</span>
+                                </div>
+                                <h4 class="text-lg font-medium text-gray-700 mb-2">IMFUYO.FARM - Agricultural Technology</h4>
+                                <div class="flex items-center text-gray-500 text-sm mb-4">
+                                    <i class="far fa-calendar-alt mr-2"></i>
+                                    <span>2024 - Present</span>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Developing and maintaining the company's web presence, implementing e-commerce solutions for agricultural products, and managing digital marketing strategies to increase brand visibility and customer engagement.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Web Development</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">E-commerce</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Digital Marketing</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Content Management</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 order-2 md:order-1 w-12 h-12 rounded-full bg-green-500 flex items-center justify-center text-white shadow-md absolute left-1/2 transform -translate-x-1/2 md:left-6 md:translate-x-0">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IT Support Assistant -->
+                <div class="relative mb-12 timeline-item">
+                    <div class="flex flex-col md:flex-row items-center md:items-start">
+                        <div class="flex-1 order-1 md:order-2 md:ml-8">
+                            <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 card-hover">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-xl font-bold text-gray-900">IT Support Assistant</h3>
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">2023 - Present</span>
+                                </div>
+                                <h4 class="text-lg font-medium text-gray-700 mb-2">KCA University</h4>
+                                <div class="flex items-center text-gray-500 text-sm mb-4">
+                                    <i class="far fa-calendar-alt mr-2"></i>
+                                    <span>2023 - Present</span>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Resolved 50+ weekly technical issues including network outages and software bugs, reducing campus IT downtime by 25%. Collaborated with IT teams to deploy security patches across 200+ devices.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Windows/Linux</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Network Troubleshooting</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Cybersecurity</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Jira</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 order-2 md:order-1 w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white shadow-md absolute left-1/2 transform -translate-x-1/2 md:left-6 md:translate-x-0">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Developer (Academic Project) -->
+                <div class="relative mb-12 timeline-item">
+                    <div class="flex flex-col md:flex-row items-center md:items-start">
+                        <div class="flex-1 order-1 md:order-2 md:ml-8">
+                            <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 card-hover">
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Full Stack Developer</h3>
+                                <h4 class="text-lg font-medium text-gray-700 mb-2">Swiss BearsDaycare (Academic Project)</h4>
+                                <div class="flex items-center text-gray-500 text-sm mb-4">
+                                    <i class="far fa-calendar-alt mr-2"></i>
+                                    <span>2024</span>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Developed a full-stack web application using PHP/MySQL that reduced administrative workload by 30% through automated reports and real-time parent notifications.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">PHP</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">MySQL</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">JavaScript</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Bootstrap</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 order-2 md:order-1 w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white shadow-md absolute left-1/2 transform -translate-x-1/2 md:left-6 md:translate-x-0">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Network Monitoring Tool -->
+                <div class="relative timeline-item">
+                    <div class="flex flex-col md:flex-row items-center md:items-start">
+                        <div class="flex-1 order-1 md:order-2 md:ml-8">
+                            <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 card-hover">
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">DevOps Engineer</h3>
+                                <h4 class="text-lg font-medium text-gray-700 mb-2">Network Monitoring Tool (Academic Project)</h4>
+                                <div class="flex items-center text-gray-500 text-sm mb-4">
+                                    <i class="far fa-calendar-alt mr-2"></i>
+                                    <span>Apr 2024</span>
+                                </div>
+                                <p class="text-gray-600 mb-4">
+                                    Created a Python-based network monitoring solution that improved server response time by 25% through bottleneck analysis and automated Bash scripting alerts.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Python</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Bash</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Linux</span>
+                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Networking</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 order-2 md:order-1 w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white shadow-md absolute left-1/2 transform -translate-x-1/2 md:left-6 md:translate-x-0">
+                            <i class="fas fa-server"></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -350,7 +675,7 @@
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 card-hover">
                     <div class="relative h-48 overflow-hidden">
                         <img src="e-commerce.png" 
-                             alt="Project 1" 
+                             alt="E-Commerce Platform" 
                              class="w-full h-full object-cover transition duration-500 hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                         <div class="absolute bottom-4 left-4">
@@ -364,9 +689,9 @@
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">React</span>
-                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">php</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">mysql</span>
-                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">daraja API</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">PHP</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">MySQL</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">Daraja API</span>
                         </div>
                         <div class="flex justify-between items-center">
                             <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
@@ -383,22 +708,22 @@
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 card-hover">
                     <div class="relative h-48 overflow-hidden">
                         <img src="ms.png" 
-                             alt="Project 2" 
+                             alt="Daycare Management System" 
                              class="w-full h-full object-cover transition duration-500 hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                         <div class="absolute bottom-4 left-4">
-                            <span class="bg-green-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">web-based App</span>
+                            <span class="bg-green-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">Web-based App</span>
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Daycare Management system</h3>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Daycare Management System</h3>
                         <p class="text-gray-600 mb-4">
                             Cross-platform app based on the website for easy communication between parents and babysitters.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-blue-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">React Native</span>
-                            <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">mysql</span>
-                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded">js</span>
+                            <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">MySQL</span>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded">JavaScript</span>
                         </div>
                         <div class="flex justify-between items-center">
                             <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
@@ -415,7 +740,7 @@
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 card-hover">
                     <div class="relative h-48 overflow-hidden">
                         <img src="prt.png" 
-                             alt="Project 3" 
+                             alt="Business & Personal Portfolios" 
                              class="w-full h-full object-cover transition duration-500 hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                         <div class="absolute bottom-4 left-4">
@@ -423,14 +748,14 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Business $ Personal Portfolios</h3>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Business & Personal Portfolios</h3>
                         <p class="text-gray-600 mb-4">
                             Real-time data visualization portfolios with interactive capabilities.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-400 text-white text-xs font-medium px-2.5 py-0.5 rounded">js</span>
+                            <span class="bg-blue-400 text-white text-xs font-medium px-2.5 py-0.5 rounded">JavaScript</span>
                             <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded">Python</span>
-                            <span class="bg-green-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">mySQL</span>
+                            <span class="bg-green-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">MySQL</span>
                         </div>
                         <div class="flex justify-between items-center">
                             <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
@@ -452,109 +777,8 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
-<section class="py-16 bg-gray-50 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
-            Work <span class="gradient-text">Experience</span>
-        </h2>
-        
-        <div class="relative">
-            <!-- Timeline -->
-            <div class="border-l-2 border-blue-200 absolute h-full left-1/2 transform -translate-x-1/2 md:left-6 md:translate-x-0"></div>
-            
-            <!-- IT Support Assistant -->
-            <div class="relative mb-12">
-                <div class="flex flex-col md:flex-row items-center md:items-start">
-                    <div class="flex-1 order-1 md:order-2 md:ml-8">
-                        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 card-hover">
-                            <div class="flex items-center justify-between mb-2">
-                                <h3 class="text-xl font-bold text-gray-900">IT Support Assistant</h3>
-                                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Current</span>
-                            </div>
-                            <h4 class="text-lg font-medium text-gray-700 mb-2">KCA University</h4>
-                            <div class="flex items-center text-gray-500 text-sm mb-4">
-                                <i class="far fa-calendar-alt mr-2"></i>
-                                <span>2023 - Present</span>
-                            </div>
-                            <p class="text-gray-600 mb-4">
-                                Resolved 50+ weekly technical issues including network outages and software bugs, reducing campus IT downtime by 25%. Collaborated with IT teams to deploy security patches across 200+ devices.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Windows/Linux</span>
-                                <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Network Troubleshooting</span>
-                                <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Cybersecurity</span>
-                                <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Jira</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex-shrink-0 order-2 md:order-1 w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white shadow-md absolute left-1/2 transform -translate-x-1/2 md:left-6 md:translate-x-0">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Web Developer (Academic Project) -->
-            <div class="relative mb-12">
-                <div class="flex flex-col md:flex-row items-center md:items-start">
-                    <div class="flex-1 order-1 md:order-2 md:ml-8">
-                        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 card-hover">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Full Stack Developer</h3>
-                            <h4 class="text-lg font-medium text-gray-700 mb-2">Swiss BearsDaycare (Academic Project)</h4>
-                            <div class="flex items-center text-gray-500 text-sm mb-4">
-                                <i class="far fa-calendar-alt mr-2"></i>
-                                <span>2024</span>
-                            </div>
-                            <p class="text-gray-600 mb-4">
-                                Developed a full-stack web application using PHP/MySQL that reduced administrative workload by 30% through automated reports and real-time parent notifications.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">PHP</span>
-                                <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">MySQL</span>
-                                <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">JavaScript</span>
-                                <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Bootstrap</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex-shrink-0 order-2 md:order-1 w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white shadow-md absolute left-1/2 transform -translate-x-1/2 md:left-6 md:translate-x-0">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Network Monitoring Tool -->
-            <div class="relative">
-                <div class="flex flex-col md:flex-row items-center md:items-start">
-                    <div class="flex-1 order-1 md:order-2 md:ml-8">
-                        <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 card-hover">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">DevOps Engineer</h3>
-                            <h4 class="text-lg font-medium text-gray-700 mb-2">Network Monitoring Tool (Academic Project)</h4>
-                            <div class="flex items-center text-gray-500 text-sm mb-4">
-                                <i class="far fa-calendar-alt mr-2"></i>
-                                <span>Apr 2024</span>
-                            </div>
-                            <p class="text-gray-600 mb-4">
-                                Created a Python-based network monitoring solution that improved server response time by 25% through bottleneck analysis and automated Bash scripting alerts.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Python</span>
-                                <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Bash</span>
-                                <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Linux</span>
-                                <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Networking</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex-shrink-0 order-2 md:order-1 w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white shadow-md absolute left-1/2 transform -translate-x-1/2 md:left-6 md:translate-x-0">
-                        <i class="fas fa-server"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white px-4 sm:px-6 lg:px-8">
+    <section id="contact" class="py-16 bg-gray-50 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl font-bold text-center text-gray-900 mb-4">
                 Get In <span class="gradient-text">Touch</span>
@@ -565,26 +789,26 @@
             
             <div class="flex flex-col md:flex-row gap-12">
                 <div class="md:w-1/2">
-                    <form class="contact-form" action="https://formspree.io/f/xdkegplk" method="POST">
-                        <div>
+                    <form class="contact-form" action="https://formspree.io/f/mwpnynve" method="POST">
+                        <div class="mb-6">
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
                             <input type="text" id="name" name="name" required 
                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
                         </div>
                         
-                        <div>
+                        <div class="mb-6">
                             <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
                             <input type="email" id="email" name="email" required 
                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
                         </div>
                         
-                        <div>
+                        <div class="mb-6">
                             <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
                             <input type="text" id="subject" name="subject" required 
                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
                         </div>
                         
-                        <div>
+                        <div class="mb-6">
                             <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
                             <textarea id="message" name="message" rows="5" required 
                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300"></textarea>
@@ -592,7 +816,7 @@
                         
                         <div>
                             <button type="submit" 
-                                    class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center justify-center">
+                                    class="w-full gradient-bg hover:opacity-90 text-white px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center justify-center">
                                 Send Message <i class="fas fa-paper-plane ml-2"></i>
                             </button>
                         </div>
@@ -601,79 +825,77 @@
                     <div id="form-message" class="mt-4 hidden p-4 rounded-lg"></div>
                 </div>
                 
-             <div class="md:w-1/2">
-    <div class="bg-gray-50 p-8 rounded-xl h-full">
-        <h3 class="text-xl font-bold text-gray-900 mb-6">Contact Information</h3>
-        
-        <div class="space-y-6">
-            <div class="flex items-start">
-                <div class="bg-blue-100 p-3 rounded-full mr-4">
-                    <i class="fas fa-map-marker-alt text-blue-600"></i>
+                <div class="md:w-1/2">
+                    <div class="bg-white p-8 rounded-xl h-full shadow-sm">
+                        <h3 class="text-xl font-bold text-gray-900 mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Location</h4>
+                                    <p class="text-gray-600">Nairobi, Kenya</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Email</h4>
+                                    <p class="text-gray-600">gideonmuchina381@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Phone</h4>
+                                    <p class="text-gray-600">+254 717 632 437</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-university text-yellow-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800">Education</h4>
+                                    <p class="text-gray-600">KCA University<br>BSc IT (2021-2025)</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-medium text-gray-800 mb-4">Connect</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://github.com/Muchina27ke" 
+                                   class="bg-gray-200 hover:bg-gray-800 hover:text-white p-3 rounded-full transition duration-300 text-gray-700"
+                                   aria-label="GitHub Profile"
+                                   title="View my GitHub projects">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/gideon-muchina-9b027b261" 
+                                   class="bg-gray-200 hover:bg-blue-600 hover:text-white p-3 rounded-full transition duration-300 text-gray-700"
+                                   aria-label="LinkedIn Profile"
+                                   title="Connect on LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="Muchina27ke" 
+                                   class="bg-gray-200 hover:bg-indigo-600 hover:text-white p-3 rounded-full transition duration-300 text-gray-700"
+                                   aria-label="Portfolio Website"
+                                   title="Visit my Portfolio">
+                                    <i class="fas fa-briefcase"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h4 class="font-medium text-gray-800">Location</h4>
-                    <p class="text-gray-600">Nairobi, Kenya</p>
-                </div>
-            </div>
-            
-            <div class="flex items-start">
-                <div class="bg-green-100 p-3 rounded-full mr-4">
-                    <i class="fas fa-envelope text-green-600"></i>
-                </div>
-                <div>
-                    <h4 class="font-medium text-gray-800">Email</h4>
-                    <p class="text-gray-600">gideonmuchina381@gmail.com</p>
-                </div>
-            </div>
-            
-            <div class="flex items-start">
-                <div class="bg-purple-100 p-3 rounded-full mr-4">
-                    <i class="fas fa-phone-alt text-purple-600"></i>
-                </div>
-                <div>
-                    <h4 class="font-medium text-gray-800">Phone</h4>
-                    <p class="text-gray-600">+254 717 632 437</p>
-                </div>
-            </div>
-            
-            <div class="flex items-start">
-                <div class="bg-yellow-100 p-3 rounded-full mr-4">
-                    <i class="fas fa-university text-yellow-600"></i>
-                </div>
-                <div>
-                    <h4 class="font-medium text-gray-800">Education</h4>
-                    <p class="text-gray-600">KCA University<br>BSc IT (2021-2025)</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="mt-8">
-    <h4 class="font-medium text-gray-800 mb-4">Connect</h4>
-    <div class="flex space-x-4">
-        <a href="https://github.com/Muchina27ke" 
-           class="bg-gray-200 hover:bg-gray-800 hover:text-white p-3 rounded-full transition duration-300 text-gray-700"
-           aria-label="GitHub Profile"
-           title="View my GitHub projects">
-            <i class="fab fa-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/gideon-muchina-9b027b261" 
-           class="bg-gray-200 hover:bg-blue-600 hover:text-white p-3 rounded-full transition duration-300 text-gray-700"
-           aria-label="LinkedIn Profile"
-           title="Connect on LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="Muchina27ke" 
-           class="bg-gray-200 hover:bg-indigo-600 hover:text-white p-3 rounded-full transition duration-300 text-gray-700"
-           aria-label="Portfolio Website"
-           title="Visit my Portfolio">
-            <i class="fas fa-briefcase"></i>
-        </a>
-        
-    </div>
-   
-</div>
-    </div>
-</div>
             </div>
         </div>
     </section>
@@ -695,46 +917,38 @@
                         <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
                         <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About</a></li>
                         <li><a href="#skills" class="text-gray-400 hover:text-white transition duration-300">Skills</a></li>
+                        <li><a href="#certifications" class="text-gray-400 hover:text-white transition duration-300">Certifications</a></li>
+                        <li><a href="#experience" class="text-gray-400 hover:text-white transition duration-300">Experience</a></li>
                         <li><a href="#projects" class="text-gray-400 hover:text-white transition duration-300">Projects</a></li>
                         <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div>
-    <h4 class="text-lg font-semibold mb-4">Technical Expertise</h4>
-    <ul class="space-y-2">
-        <li class="flex items-center">
-            <i class="fas fa-database text-blue-400 mr-2 w-4"></i>
-            <a href="#database" class="text-gray-400 hover:text-blue-400 transition duration-300">
-                Database Administration
-            </a>
-        </li>
-        <li class="flex items-center">
-            <i class="fas fa-code text-blue-400 mr-2 w-4"></i>
-            <a href="#web" class="text-gray-400 hover:text-blue-400 transition duration-300">
-                Full-Stack Development
-            </a>
-        </li>
-        <li class="flex items-center">
-            <i class="fas fa-network-wired text-blue-400 mr-2 w-4"></i>
-            <a href="#network" class="text-gray-400 hover:text-blue-400 transition duration-300">
-                Network Solutions
-            </a>
-        </li>
-        <li class="flex items-center">
-            <i class="fas fa-tools text-blue-400 mr-2 w-4"></i>
-            <a href="#support" class="text-gray-400 hover:text-blue-400 transition duration-300">
-                IT Support & Troubleshooting
-            </a>
-        </li>
-        <li class="flex items-center">
-            <i class="fas fa-shield-alt text-blue-400 mr-2 w-4"></i>
-            <a href="#security" class="text-gray-400 hover:text-blue-400 transition duration-300">
-                System Security
-            </a>
-        </li>
-    </ul>
-</div>
+                    <h4 class="text-lg font-semibold mb-4">Technical Expertise</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-database text-blue-400 mr-2 w-4"></i>
+                            <span class="text-gray-400">Database Administration</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-code text-blue-400 mr-2 w-4"></i>
+                            <span class="text-gray-400">Full-Stack Development</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-network-wired text-blue-400 mr-2 w-4"></i>
+                            <span class="text-gray-400">Network Solutions</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-tools text-blue-400 mr-2 w-4"></i>
+                            <span class="text-gray-400">IT Support & Troubleshooting</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-shield-alt text-blue-400 mr-2 w-4"></i>
+                            <span class="text-gray-400">System Security</span>
+                        </li>
+                    </ul>
+                </div>
                 
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
@@ -820,7 +1034,7 @@
         });
 
         // Form submission handling
-        const contactForm = document.getElementById('contact-form');
+        const contactForm = document.querySelector('.contact-form');
         const formMessage = document.getElementById('form-message');
         
         if (contactForm) {
@@ -847,7 +1061,7 @@
 
         // Animate elements when they come into view
         const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.card-hover, .floating');
+            const elements = document.querySelectorAll('.card-hover, .floating, .timeline-item');
             
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
@@ -858,17 +1072,39 @@
                     element.style.transform = 'translateY(0)';
                 }
             });
+
+            // Animate progress bars
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach(bar => {
+                const elementPosition = bar.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    bar.style.width = bar.style.width;
+                }
+            });
         };
 
         // Set initial state for animated elements
-        document.querySelectorAll('.card-hover, .floating').forEach(el => {
+        document.querySelectorAll('.card-hover, .floating, .timeline-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         });
 
         // Run once on load
-        animateOnScroll();
+        window.addEventListener('load', function() {
+            animateOnScroll();
+            
+            // Add typewriter effect
+            const typewriter = document.querySelector('.typewriter');
+            if (typewriter) {
+                typewriter.style.animation = 'none';
+                setTimeout(() => {
+                    typewriter.style.animation = '';
+                }, 100);
+            }
+        });
         
         // Then run on scroll
         window.addEventListener('scroll', animateOnScroll);
