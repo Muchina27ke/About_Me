@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Gideon Muchina | IT Professional Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -106,6 +106,62 @@
             from, to { border-color: transparent }
             50% { border-color: var(--primary); }
         }
+        
+        /* Mobile-first responsive improvements */
+        @media (max-width: 640px) {
+            .typewriter {
+                white-space: normal;
+                border-right: none;
+                animation: none;
+                letter-spacing: normal;
+            }
+            
+            .floating {
+                animation: none;
+            }
+            
+            .card-hover:hover {
+                transform: none;
+            }
+            
+            .skill-card:hover .skill-icon {
+                transform: none;
+            }
+        }
+        
+        /* Touch-friendly improvements */
+        @media (hover: none) and (pointer: coarse) {
+            .card-hover:hover {
+                transform: none;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            }
+            
+            .nav-link:hover:after {
+                width: 0;
+            }
+            
+            .skill-card:hover .skill-icon {
+                transform: none;
+            }
+        }
+        
+        /* Improved mobile typography */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem !important;
+                line-height: 1.2 !important;
+            }
+            
+            h2 {
+                font-size: 1.5rem !important;
+                line-height: 1.3 !important;
+            }
+            
+            h3 {
+                font-size: 1.25rem !important;
+                line-height: 1.4 !important;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans antialiased">
@@ -126,7 +182,7 @@
                     <a href="#contact" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 text-sm font-medium">Contact</a>
                 </div>
                 <div class="md:hidden flex items-center">
-                    <button id="menu-btn" class="text-gray-500 hover:text-gray-900 focus:outline-none">
+                    <button id="menu-btn" class="text-gray-500 hover:text-gray-900 focus:outline-none p-2">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -150,29 +206,29 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="home" class="pt-20 pb-12 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+            <div class="w-full md:w-1/2 mb-8 md:mb-0 text-center md:text-left">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
                     Hi, I'm <span class="gradient-text">Gideon Muchina</span>
                 </h1>
-                <h2 class="text-2xl md:text-3xl text-gray-600 mb-6 typewriter">
+                <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 mb-6 typewriter">
                     Full Stack Developer & IT Specialist | MikroTik Networking Expert
                 </h2>
-                <p class="text-lg text-gray-500 mb-8 max-w-lg">
+                <p class="text-base sm:text-lg text-gray-500 mb-8 max-w-lg mx-auto md:mx-0">
                     I build exceptional digital experiences with clean, efficient code and specialize in enterprise networking solutions using MikroTik routers, VLANs, and fiber optic infrastructure.
                 </p>
-                <div class="flex space-x-4">
-                    <a href="#projects" class="gradient-bg hover:opacity-90 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
+                    <a href="#projects" class="gradient-bg hover:opacity-90 text-white px-6 py-3 rounded-lg font-medium transition duration-300 text-center">
                         View My Work
                     </a>
-                    <a href="#contact" class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition duration-300">
+                    <a href="#contact" class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition duration-300 text-center">
                         Contact Me
                     </a>
                 </div>
             </div>
-            <div class="md:w-1/2 flex justify-center">
-                <div class="relative w-64 h-64 md:w-80 md:h-80">
+            <div class="w-full md:w-1/2 flex justify-center mt-8 md:mt-0">
+                <div class="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80">
                     <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-20 blur-xl"></div>
                     <img src="myself.png" 
                          alt="Gideon Muchina" 
@@ -273,7 +329,7 @@
                 I've worked with a wide variety of technologies in the web development world. Here are some of my core competencies.
             </p>
             
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
                 <!-- Skill Card 1 -->
                 <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover skill-card">
                     <div class="text-blue-500 mb-4 text-4xl">
@@ -422,7 +478,7 @@
                 Here are some of the professional certifications I've earned to validate my skills and knowledge.
             </p>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <!-- Bachelor's Degree -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 card-hover">
                     <div class="relative h-48 overflow-hidden gradient-bg flex items-center justify-center" style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);">
@@ -737,16 +793,16 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-white px-4 sm:px-6 lg:px-8">
+    <section id="projects" class="py-12 md:py-16 bg-white px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-4">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-4">
                 Featured <span class="gradient-text">Projects</span>
             </h2>
-            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-8 md:mb-12 text-sm sm:text-base">
                 Here are some of my recent projects that showcase my skills and expertise.
             </p>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                 <!-- Project 1 -->
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 card-hover">
                     <div class="relative h-48 overflow-hidden">
@@ -854,45 +910,45 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-50 px-4 sm:px-6 lg:px-8">
+    <section id="contact" class="py-12 md:py-16 bg-gray-50 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-4">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-4">
                 Get In <span class="gradient-text">Touch</span>
             </h2>
-            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-8 md:mb-12 text-sm sm:text-base">
                 Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
             </p>
             
-            <div class="flex flex-col md:flex-row gap-12">
-                <div class="md:w-1/2">
+            <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+                <div class="w-full lg:w-1/2">
                     <form class="contact-form" action="https://formspree.io/f/mwpnynve" method="POST">
-                        <div class="mb-6">
+                        <div class="mb-4 sm:mb-6">
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
                             <input type="text" id="name" name="name" required 
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+                                   class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300 text-sm sm:text-base">
                         </div>
                         
-                        <div class="mb-6">
+                        <div class="mb-4 sm:mb-6">
                             <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
                             <input type="email" id="email" name="email" required 
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+                                   class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300 text-sm sm:text-base">
                         </div>
                         
-                        <div class="mb-6">
+                        <div class="mb-4 sm:mb-6">
                             <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
                             <input type="text" id="subject" name="subject" required 
-                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+                                   class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300 text-sm sm:text-base">
                         </div>
                         
-                        <div class="mb-6">
+                        <div class="mb-4 sm:mb-6">
                             <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                            <textarea id="message" name="message" rows="5" required 
-                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300"></textarea>
+                            <textarea id="message" name="message" rows="4" required 
+                                      class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300 text-sm sm:text-base"></textarea>
                         </div>
                         
                         <div>
                             <button type="submit" 
-                                    class="w-full gradient-bg hover:opacity-90 text-white px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center justify-center">
+                                    class="w-full gradient-bg hover:opacity-90 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition duration-300 flex items-center justify-center text-sm sm:text-base">
                                 Send Message <i class="fas fa-paper-plane ml-2"></i>
                             </button>
                         </div>
@@ -901,7 +957,7 @@
                     <div id="form-message" class="mt-4 hidden p-4 rounded-lg"></div>
                 </div>
                 
-                <div class="md:w-1/2">
+                <div class="w-full lg:w-1/2 mt-8 lg:mt-0">
                     <div class="bg-white p-8 rounded-xl h-full shadow-sm">
                         <h3 class="text-xl font-bold text-gray-900 mb-6">Contact Information</h3>
                         
