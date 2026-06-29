@@ -1,1245 +1,954 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Gideon Muchina | IT Professional Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Custom CSS for animations and effects */
-        :root {
-            --primary: #3b82f6;
-            --secondary: #8b5cf6;
-            --accent: #10b981;
-        }
-        
-        .gradient-text {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-        }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .nav-link {
-            position: relative;
-        }
-        
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--primary);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover:after {
-            width: 100%;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .floating {
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animate-fade-in {
-            animation: fadeIn 1s ease-out forwards;
-        }
-        
-        .timeline-item {
-            opacity: 0;
-        }
-        
-        .progress-bar {
-            transition: width 1s ease-in-out;
-        }
-        
-        .skill-card:hover .skill-icon {
-            transform: scale(1.1);
-        }
-        
-        .skill-icon {
-            transition: transform 0.3s ease;
-        }
-        
-        .typewriter {
-            overflow: hidden;
-            border-right: .15em solid var(--primary);
-            white-space: nowrap;
-            margin: 0 auto;
-            letter-spacing: .15em;
-            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-        }
-        
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: var(--primary); }
-        }
-        
-        /* Mobile-first responsive improvements */
-        @media (max-width: 640px) {
-            .typewriter {
-                white-space: normal;
-                border-right: none;
-                animation: none;
-                letter-spacing: normal;
-            }
-            
-            .floating {
-                animation: none;
-            }
-            
-            .card-hover:hover {
-                transform: none;
-            }
-            
-            .skill-card:hover .skill-icon {
-                transform: none;
-            }
-        }
-        
-        /* Touch-friendly improvements */
-        @media (hover: none) and (pointer: coarse) {
-            .card-hover:hover {
-                transform: none;
-                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            }
-            
-            .nav-link:hover:after {
-                width: 0;
-            }
-            
-            .skill-card:hover .skill-icon {
-                transform: none;
-            }
-        }
-        
-        /* Improved mobile typography */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem !important;
-                line-height: 1.2 !important;
-            }
-            
-            h2 {
-                font-size: 1.5rem !important;
-                line-height: 1.3 !important;
-            }
-            
-            h3 {
-                font-size: 1.25rem !important;
-                line-height: 1.4 !important;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gideon Muchina | Full Stack Developer & IT Specialist</title>
+  <meta name="description" content="Gideon Muchina — Full Stack Developer, IT Specialist, and MikroTik Networking Expert based in Nairobi, Kenya. Building scalable web apps with Elixir, Node.js, and modern technologies.">
+  <meta name="author" content="Gideon Muchina">
+  <meta property="og:title" content="Gideon Muchina | Full Stack Developer">
+  <meta property="og:description" content="Portfolio of Gideon Muchina — Full Stack Developer & MikroTik Networking Expert.">
+  <meta property="og:type" content="website">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="index.css">
 </head>
-<body class="bg-gray-50 font-sans antialiased">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-sm fixed w-full z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <span class="text-xl font-bold gradient-text">Gideon Muchina</span>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 text-sm font-medium">Home</a>
-                    <a href="#about" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 text-sm font-medium">About</a>
-                    <a href="#skills" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 text-sm font-medium">Skills</a>
-                    <a href="#certifications" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 text-sm font-medium">Certifications</a>
-                    <a href="#experience" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 text-sm font-medium">Experience</a>
-                    <a href="#projects" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 text-sm font-medium">Projects</a>
-                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-500 px-3 py-2 text-sm font-medium">Contact</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button id="menu-btn" class="text-gray-500 hover:text-gray-900 focus:outline-none p-2">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">Home</a>
-                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">About</a>
-                <a href="#skills" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">Skills</a>
-                <a href="#certifications" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">Certifications</a>
-                <a href="#experience" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">Experience</a>
-                <a href="#projects" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">Projects</a>
-                <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50">Contact</a>
-            </div>
-        </div>
-    </nav>
+<body>
 
-    <!-- Hero Section -->
-    <section id="home" class="pt-20 pb-12 md:pt-32 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row items-center">
-            <div class="w-full md:w-1/2 mb-8 md:mb-0 text-center md:text-left">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 leading-tight">
-                    Hi, I'm <span class="gradient-text">Gideon Muchina</span>
-                </h1>
-                <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 mb-6 typewriter">
-                    Full Stack Developer & IT Specialist | MikroTik Networking Expert
-                </h2>
-                <p class="text-base sm:text-lg text-gray-500 mb-8 max-w-lg mx-auto md:mx-0">
-                    I build exceptional digital experiences with clean, efficient code and specialize in enterprise networking solutions using MikroTik routers, VLANs, and fiber optic infrastructure.
-                </p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
-                    <a href="#projects" class="gradient-bg hover:opacity-90 text-white px-6 py-3 rounded-lg font-medium transition duration-300 text-center">
-                        View My Work
-                    </a>
-                    <a href="#contact" class="border border-blue-600 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition duration-300 text-center">
-                        Contact Me
-                    </a>
-                </div>
-            </div>
-            <div class="w-full md:w-1/2 flex justify-center mt-8 md:mt-0">
-                <div class="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80">
-                    <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full opacity-20 blur-xl"></div>
-                    <img src="myself.png" 
-                         alt="Gideon Muchina" 
-                         class="relative w-full h-full object-cover rounded-full border-4 border-white shadow-lg floating">
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- ═══════════════════════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════════════════════ -->
+  <nav id="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo" aria-label="Gideon Muchina - Home">Gideon Muchina</a>
 
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-white px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
-                About <span class="gradient-text">Me</span>
-            </h2>
-            
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
-                    <div class="relative w-48 h-48 md:w-64 md:h-64">
-                        <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-lg opacity-20 blur-xl"></div>
-                        <img src="about.jpg" 
-                             alt="Gideon Muchina Profile" 
-                             class="relative w-full h-full object-cover rounded-lg shadow-lg">
-                    </div>
-                </div>
-                
-                <div class="md:w-2/3 md:pl-12">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Who I Am</h3>
-                    <p class="text-gray-600 mb-6">
-                        I'm a passionate Full Stack Developer and IT Specialist with over 2 years of experience in creating web applications and enterprise networking solutions. 
-                        My expertise spans from modern web development to advanced networking infrastructure, specializing in MikroTik routers, VLAN configurations, and fiber optic networks.
-                        My journey in IT started when I was just 15 years old, tinkering with my first computer, and since then I've been fascinated 
-                        by the power of technology to transform businesses and lives.
-                    </p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                        <div class="flex items-start">
-                            <div class="bg-blue-100 p-3 rounded-full mr-4 skill-icon">
-                                <i class="fas fa-code text-blue-600"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800">Full Stack Development</h4>
-                                <p class="text-gray-600 text-sm">Building complete web applications from front to back</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="bg-purple-100 p-3 rounded-full mr-4 skill-icon">
-                                <i class="fas fa-server text-purple-600"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800">DevOps & Cloud</h4>
-                                <p class="text-gray-600 text-sm">Deploying and managing scalable cloud infrastructure</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="bg-green-100 p-3 rounded-full mr-4 skill-icon">
-                                <i class="fas fa-shield-alt text-green-600"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800">Cyber Security</h4>
-                                <p class="text-gray-600 text-sm">Implementing security best practices in all projects</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <div class="bg-yellow-100 p-3 rounded-full mr-4 skill-icon">
-                                <i class="fas fa-network-wired text-yellow-600"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-medium text-gray-800">MikroTik Networking</h4>
-                                <p class="text-gray-600 text-sm">Expert in MikroTik routers, VLANs, and fiber optic infrastructure</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="flex flex-wrap gap-4">
-                        <a href="https://github.com/Muchina27ke" class="flex items-center text-blue-600 hover:text-blue-800">
-                            <i class="fab fa-github mr-2"></i> GitHub
-                        </a>
-                        <a href="https://www.linkedin.com/in/gideon-muchina-9b027b261" class="flex items-center text-blue-700 hover:text-blue-900">
-                            <i class="fab fa-linkedin mr-2"></i> LinkedIn
-                        </a>
-                        <a href="#" class="flex items-center text-blue-400 hover:text-blue-600">
-                            <i class="fab fa-twitter mr-2"></i> Twitter
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="nav-links" role="menubar">
+        <a href="#home"           class="nav-link" data-section="home"           role="menuitem">Home</a>
+        <a href="#about"          class="nav-link" data-section="about"          role="menuitem">About</a>
+        <a href="#skills"         class="nav-link" data-section="skills"         role="menuitem">Skills</a>
+        <a href="#certifications" class="nav-link" data-section="certifications" role="menuitem">Certifications</a>
+        <a href="#experience"     class="nav-link" data-section="experience"     role="menuitem">Experience</a>
+        <a href="#projects"       class="nav-link" data-section="projects"       role="menuitem">Projects</a>
+        <a href="#contact"        class="nav-link" data-section="contact"        role="menuitem">Contact</a>
+      </div>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-16 bg-gray-50 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-4">
-                My <span class="gradient-text">Skills</span>
-            </h2>
-            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-                I've worked with a wide variety of technologies in the web development world. Here are some of my core competencies.
-            </p>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-                <!-- Skill Card 1 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover skill-card">
-                    <div class="text-blue-500 mb-4 text-4xl">
-                        <i class="fab fa-js"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">JavaScript</h3>
-                    <p class="text-gray-600 text-sm">Advanced knowledge of ES6+, frameworks, and tooling</p>
-                    <div class="mt-4">
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-blue-500 h-2 rounded-full progress-bar" style="width: 90%"></div>
-                        </div>
-                        <span class="text-xs text-gray-500 mt-1">90%</span>
-                    </div>
-                </div>
-                
-                <!-- Skill Card 2 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover skill-card">
-                    <div class="text-purple-600 mb-4 text-4xl">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Elixir</h3>
-                    <p class="text-gray-600 text-sm">Functional programming with fault-tolerant systems</p>
-                    <div class="mt-4">
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-purple-600 h-2 rounded-full progress-bar" style="width: 88%"></div>
-                        </div>
-                        <span class="text-xs text-gray-500 mt-1">88%</span>
-                    </div>
-                </div>
-                
-                <!-- Skill Card 3 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover skill-card">
-                    <div class="text-green-500 mb-4 text-4xl">
-                        <i class="fab fa-node-js"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Node.js</h3>
-                    <p class="text-gray-600 text-sm">Server-side JavaScript and API development</p>
-                    <div class="mt-4">
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-green-500 h-2 rounded-full progress-bar" style="width: 88%"></div>
-                        </div>
-                        <span class="text-xs text-gray-500 mt-1">88%</span>
-                    </div>
-                </div>
-                
-                <!-- Skill Card 4 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover skill-card">
-                    <div class="text-purple-500 mb-4 text-4xl">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Database Systems</h3>
-                    <p class="text-gray-600 text-sm">SQL databases design and optimization</p>
-                    <div class="mt-4">
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-purple-500 h-2 rounded-full progress-bar" style="width: 82%"></div>
-                        </div>
-                        <span class="text-xs text-gray-500 mt-1">82%</span>
-                    </div>
-                </div>
-                
-                <!-- Skill Card 5 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover skill-card">
-                    <div class="text-pink-500 mb-4 text-4xl">
-                        <i class="fab fa-docker"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Docker</h3>
-                    <p class="text-gray-600 text-sm">Containerization and microservices architecture</p>
-                    <div class="mt-4">
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-pink-500 h-2 rounded-full progress-bar" style="width: 80%"></div>
-                        </div>
-                        <span class="text-xs text-gray-500 mt-1">80%</span>
-                    </div>
-                </div>
-                
-                <!-- Skill Card 6 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover skill-card">
-                    <div class="text-indigo-500 mb-4 text-4xl">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Cyber Security</h3>
-                    <p class="text-gray-600 text-sm">Secure coding practices and vulnerability testing</p>
-                    <div class="mt-4">
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-indigo-500 h-2 rounded-full progress-bar" style="width: 85%"></div>
-                        </div>
-                        <span class="text-xs text-gray-500 mt-1">85%</span>
-                    </div>
-                </div>
-                
-                <!-- Skill Card 7 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover skill-card">
-                    <div class="text-pink-500 mb-4 text-4xl">
-                        <i class="fab fa-docker"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Docker</h3>
-                    <p class="text-gray-600 text-sm">Containerization and microservices architecture</p>
-                    <div class="mt-4">
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-pink-500 h-2 rounded-full progress-bar" style="width: 80%"></div>
-                        </div>
-                        <span class="text-xs text-gray-500 mt-1">80%</span>
-                    </div>
-                </div>
-                
-                <!-- Skill Card 8 -->
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover skill-card">
-                    <div class="text-indigo-500 mb-4 text-4xl">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Cyber Security</h3>
-                    <p class="text-gray-600 text-sm">Secure coding practices and vulnerability testing</p>
-                    <div class="mt-4">
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-indigo-500 h-2 rounded-full progress-bar" style="width: 85%"></div>
-                        </div>
-                        <span class="text-xs text-gray-500 mt-1">85%</span>
-                    </div>
-                </div>
-                
-                <!-- Skill Card 9 - MikroTik -->
-                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 card-hover skill-card">
-                    <div class="text-orange-500 mb-4 text-4xl">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-800 mb-2">MikroTik Networking</h3>
-                    <p class="text-gray-600 text-sm">Advanced MikroTik configuration, VLANs, and fiber infrastructure</p>
-                    <div class="mt-4">
-                        <div class="w-full bg-gray-200 rounded-full h-2">
-                            <div class="bg-orange-500 h-2 rounded-full progress-bar" style="width: 92%"></div>
-                        </div>
-                        <span class="text-xs text-gray-500 mt-1">92%</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="py-16 bg-white px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-4">
-                My <span class="gradient-text">Certifications</span>
-            </h2>
-            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-                Here are some of the professional certifications I've earned to validate my skills and knowledge.
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <!-- Bachelor's Degree -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 card-hover">
-                    <div class="relative h-48 overflow-hidden gradient-bg flex items-center justify-center" style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);">
-                        <div class="text-white text-6xl">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="absolute bottom-4 left-4">
-                            <span class="bg-blue-600 text-white text-xs font-medium px-2.5 py-0.5 rounded">Degree</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Bachelor of Science in Information Technology</h3>
-                        <h4 class="text-lg font-medium text-gray-700 mb-2">KCA University</h4>
-                        <div class="flex items-center text-gray-500 text-sm mb-4">
-                            <i class="far fa-calendar-alt mr-2"></i>
-                            <span>2021 - 2025</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">
-                            Comprehensive study in information technology, software development, networking, database management, and cybersecurity.
-                        </p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-green-600 font-medium flex items-center">
-                                Completed <i class="fas fa-check-circle ml-2"></i>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Java Certification -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 card-hover">
-                    <div class="relative h-48 overflow-hidden gradient-bg flex items-center justify-center">
-                        <div class="text-white text-6xl">
-                            <i class="fab fa-java"></i>
-                        </div>
-                        <div class="absolute bottom-4 left-4">
-                            <span class="bg-blue-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">Programming</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Java Programming Certification</h3>
-                        <h4 class="text-lg font-medium text-gray-700 mb-2">Kenswed TVET</h4>
-                        <div class="flex items-center text-gray-500 text-sm mb-4">
-                            <i class="far fa-calendar-alt mr-2"></i>
-                            <span>2023</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">
-                            Certified in Java programming fundamentals, object-oriented programming concepts, and application development.
-                        </p>
-                        <div class="flex justify-between items-center">
-                            <a href="../Gideon-Muchina-Java-Cert.pdf" class="text-blue-600 hover:text-blue-800 font-medium flex items-center" download>
-                                Download Certificate <i class="fas fa-download ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
- 
-            
-  
-             <!-- Hikvision Certification Card -->
-<div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 card-hover">
-    <div class="relative h-48 overflow-hidden gradient-bg flex items-center justify-center" style="background: linear-gradient(135deg, #012b69 0%, #2c5aa0 100%);">
-        <div class="text-white text-6xl">
-            <i class="fas fa-video"></i>
-        </div>
-        <div class="absolute bottom-4 left-4">
-            <span class="bg-blue-700 text-white text-xs font-medium px-2.5 py-0.5 rounded">Security Technology</span>
-        </div>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div class="p-6">
-        <h3 class="text-xl font-bold text-gray-900 mb-2">Hikvision Certification</h3>
-        <h4 class="text-lg font-medium text-gray-700 mb-2">Hikvision Technical Training</h4>
-        <div class="flex items-center text-gray-500 text-sm mb-4">
-            <i class="far fa-calendar-alt mr-2"></i>
-            <span>2025</span>
-        </div>
-        <p class="text-gray-600 mb-4">
-            Certified in Hikvision security systems, including installation, configuration, and maintenance of surveillance equipment and IP networks
-        </p>
-        <div class="flex justify-between items-center">
-            <a href="../Hikvision Cert-Gideon_Muchina.pdf" class="text-blue-700 hover:text-blue-900 font-medium flex items-center transition duration-150 ease-in-out" download>
-                Download Certificate <i class="fas fa-download ml-2"></i>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div id="nav-mobile" class="nav-mobile" role="menu" aria-label="Mobile navigation">
+    <a href="#home"           class="nav-link" role="menuitem">Home</a>
+    <a href="#about"          class="nav-link" role="menuitem">About</a>
+    <a href="#skills"         class="nav-link" role="menuitem">Skills</a>
+    <a href="#certifications" class="nav-link" role="menuitem">Certifications</a>
+    <a href="#experience"     class="nav-link" role="menuitem">Experience</a>
+    <a href="#projects"       class="nav-link" role="menuitem">Projects</a>
+    <a href="#contact"        class="nav-link" role="menuitem">Contact</a>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════════════════════ -->
+  <section id="home" aria-label="Introduction">
+    <div class="container">
+      <div class="hero-inner">
+        <!-- Content -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="dot" aria-hidden="true"></span>
+            Available for opportunities
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Gideon Muchina</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            <span class="typewriter-text" aria-live="polite">Full Stack Developer</span>
+          </p>
+
+          <p class="hero-description">
+            I build exceptional digital experiences with clean, efficient code
+            and specialize in enterprise networking solutions using MikroTik
+            routers, VLANs, and fiber optic infrastructure.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary" id="hero-view-work">
+              View My Work <i class="fas fa-arrow-right" aria-hidden="true"></i>
             </a>
+            <a href="#contact" class="btn btn-outline" id="hero-contact">
+              Contact Me
+            </a>
+          </div>
+
+          <div class="hero-stats" aria-label="Quick stats">
+            <div>
+              <div class="hero-stat-value">2+</div>
+              <div class="hero-stat-label">Years Experience</div>
+            </div>
+            <div>
+              <div class="hero-stat-value">10+</div>
+              <div class="hero-stat-label">Projects Delivered</div>
+            </div>
+            <div>
+              <div class="hero-stat-value">3</div>
+              <div class="hero-stat-label">Certifications</div>
+            </div>
+          </div>
         </div>
+
+        <!-- Image -->
+        <div class="hero-image-wrap">
+          <div class="hero-image-ring">
+            <!-- Orbital rings -->
+            <div class="orbit orbit-1" aria-hidden="true">
+              <div class="orbit-dot"></div>
+            </div>
+            <div class="orbit orbit-2" aria-hidden="true">
+              <div class="orbit-dot"></div>
+            </div>
+            <img src="myself.png" alt="Gideon Muchina" loading="eager">
+          </div>
+        </div>
+      </div>
     </div>
-</div>
-            
-                <!-- Additional certification placeholder -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 card-hover">
-                    <div class="relative h-48 overflow-hidden bg-gray-100 flex items-center justify-center">
-                        <div class="text-gray-400 text-6xl">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <div class="absolute bottom-4 left-4">
-                            <span class="bg-green-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">Coming Soon</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">AWS Cloud Practitioner</h3>
-                        <h4 class="text-lg font-medium text-gray-700 mb-2">Amazon Web Services</h4>
-                        <div class="flex items-center text-gray-500 text-sm mb-4">
-                            <i class="far fa-calendar-alt mr-2"></i>
-                            <span>In Progress</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">
-                            Cloud fundamentals and AWS services knowledge certification for cloud practitioners.
-                        </p>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-gray-400 font-medium flex items-center">
-                                In Progress <i class="fas fa-hourglass-half ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       ABOUT
+  ════════════════════════════════════════════════════════════ -->
+  <section id="about" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-grid">
+        <!-- Image -->
+        <div class="about-image-wrap reveal">
+          <div class="about-image-frame">
+            <img src="about.jpg" alt="Gideon Muchina at work" loading="lazy">
+          </div>
+          <div class="about-image-badge" aria-hidden="true">
+            <div class="number">2+</div>
+            <div class="label">Years in IT</div>
+          </div>
         </div>
-    </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-16 bg-gray-50 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
-                Work <span class="gradient-text">Experience</span>
-            </h2>
-            
-            <div class="relative">
-                <!-- Timeline -->
-                <div class="border-l-2 border-blue-200 absolute h-full left-1/2 transform -translate-x-1/2 md:left-6 md:translate-x-0"></div>
-                
-                <!-- Current Position - ispman.tech -->
-                <div class="relative mb-12 timeline-item">
-                    <div class="flex flex-col md:flex-row items-center md:items-start">
-                        <div class="flex-1 order-1 md:order-2 md:ml-8">
-                            <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 card-hover">
-                                <div class="flex items-center justify-between mb-2">
-                                    <h3 class="text-xl font-bold text-gray-900">Junior Developer</h3>
-                                    <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Current</span>
-                                </div>
-                                <h4 class="text-lg font-medium text-gray-700 mb-2">ispman.tech - Nairobi, Kenya</h4>
-                                <div class="flex items-center text-gray-500 text-sm mb-4">
-                                    <i class="far fa-calendar-alt mr-2"></i>
-                                    <span>2025 - Present</span>
-                                </div>
-                                <p class="text-gray-600 mb-4">
-                                    Developing robust web applications using Elixir and Phoenix framework. Building scalable, fault-tolerant systems with real-time features and implementing modern web development practices for enterprise-level applications.
-                                </p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Elixir</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Phoenix Framework</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">LiveView</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">PostgreSQL</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">OTP</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex-shrink-0 order-2 md:order-1 w-12 h-12 rounded-full bg-green-500 flex items-center justify-center text-white shadow-md absolute left-1/2 transform -translate-x-1/2 md:left-6 md:translate-x-0">
-                            <i class="fas fa-code"></i>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- VITUIT Internship -->
-                <div class="relative mb-12 timeline-item">
-                    <div class="flex flex-col md:flex-row items-center md:items-start">
-                        <div class="flex-1 order-1 md:order-2 md:ml-8">
-                            <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 card-hover">
-                                <div class="flex items-center justify-between mb-2">
-                                    <h3 class="text-xl font-bold text-gray-900">MikroTik Networking Specialist</h3>
-                                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">2024</span>
-                                </div>
-                                <h4 class="text-lg font-medium text-gray-700 mb-2">VITUIT - Westlands, Nairobi</h4>
-                                <div class="flex items-center text-gray-500 text-sm mb-4">
-                                    <i class="far fa-calendar-alt mr-2"></i>
-                                    <span>2024</span>
-                                </div>
-                                <p class="text-gray-600 mb-4">
-                                    Specialized in enterprise MikroTik router configurations and fiber optic network implementations. Configured advanced VLAN setups for internet distribution, managed network security protocols, and optimized bandwidth allocation for multiple client networks using MikroTik RouterOS.
-                                </p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">MikroTik RouterOS</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">VLAN Configuration</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Fiber Optic Networks</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Network Security</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Bandwidth Management</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex-shrink-0 order-2 md:order-1 w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white shadow-md absolute left-1/2 transform -translate-x-1/2 md:left-6 md:translate-x-0">
-                            <i class="fas fa-network-wired"></i>
-                        </div>
-                    </div>
-                </div>
+        <!-- Content -->
+        <div class="about-content reveal">
+          <span class="section-label">Who I Am</span>
+          <h2 id="about-heading">About <span class="gradient-text">Me</span></h2>
 
-                <!-- IMFUTYO.FARM Experience -->
-                <div class="relative mb-12 timeline-item">
-                    <div class="flex flex-col md:flex-row items-center md:items-start">
-                        <div class="flex-1 order-1 md:order-2 md:ml-8">
-                            <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 card-hover">
-                                <div class="flex items-center justify-between mb-2">
-                                    <h3 class="text-xl font-bold text-gray-900">Web Developer & Management</h3>
-                                    <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded">2025</span>
-                                </div>
-                                <h4 class="text-lg font-medium text-gray-700 mb-2">IMFUYO.FARM - Agricultural Technology</h4>
-                                <div class="flex items-center text-gray-500 text-sm mb-4">
-                                    <i class="far fa-calendar-alt mr-2"></i>
-                                    <span>August 2025 - November 2025</span>
-                                </div>
-                                <p class="text-gray-600 mb-4">
-                                    Developed and maintained the company's web presence, implemented e-commerce solutions for agricultural products, and managed digital marketing strategies to increase brand visibility and customer engagement.
-                                </p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Web Development</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">E-commerce</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Digital Marketing</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Content Management</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex-shrink-0 order-2 md:order-1 w-12 h-12 rounded-full bg-green-500 flex items-center justify-center text-white shadow-md absolute left-1/2 transform -translate-x-1/2 md:left-6 md:translate-x-0">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                    </div>
-                </div>
+          <p>
+            I'm a passionate Full Stack Developer and IT Specialist with over 2 years of
+            experience creating web applications and enterprise networking solutions. My
+            expertise spans modern web development to advanced networking infrastructure —
+            specializing in MikroTik routers, VLAN configurations, and fiber optic networks.
+          </p>
+          <p>
+            My journey in IT started when I was 15, tinkering with my first computer. Since
+            then, I've been fascinated by technology's power to transform businesses and lives.
+          </p>
 
-                <!-- IT Support Assistant -->
-                <div class="relative mb-12 timeline-item">
-                    <div class="flex flex-col md:flex-row items-center md:items-start">
-                        <div class="flex-1 order-1 md:order-2 md:ml-8">
-                            <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 card-hover">
-                                <div class="flex items-center justify-between mb-2">
-                                    <h3 class="text-xl font-bold text-gray-900">IT Support Assistant</h3>
-                                    <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">2023 - 2025</span>
-                                </div>
-                                <h4 class="text-lg font-medium text-gray-700 mb-2">KCA University</h4>
-                                <div class="flex items-center text-gray-500 text-sm mb-4">
-                                    <i class="far fa-calendar-alt mr-2"></i>
-                                    <span>2023 - 2025</span>
-                                </div>
-                                <p class="text-gray-600 mb-4">
-                                    Resolved 50+ weekly technical issues including network outages and software bugs, reducing campus IT downtime by 25%. Collaborated with IT teams to deploy security patches across 200+ devices.
-                                </p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Windows/Linux</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Network Troubleshooting</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Cybersecurity</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Jira</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex-shrink-0 order-2 md:order-1 w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white shadow-md absolute left-1/2 transform -translate-x-1/2 md:left-6 md:translate-x-0">
-                            <i class="fas fa-desktop"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Web Developer (Academic Project) -->
-                <div class="relative mb-12 timeline-item">
-                    <div class="flex flex-col md:flex-row items-center md:items-start">
-                        <div class="flex-1 order-1 md:order-2 md:ml-8">
-                            <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 card-hover">
-                                <h3 class="text-xl font-bold text-gray-900 mb-2">Full Stack Developer</h3>
-                                <h4 class="text-lg font-medium text-gray-700 mb-2">Swiss BearsDaycare (Academic Project)</h4>
-                                <div class="flex items-center text-gray-500 text-sm mb-4">
-                                    <i class="far fa-calendar-alt mr-2"></i>
-                                    <span>2024</span>
-                                </div>
-                                <p class="text-gray-600 mb-4">
-                                    Developed a full-stack web application using PHP/MySQL that reduced administrative workload by 30% through automated reports and real-time parent notifications.
-                                </p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">PHP</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">MySQL</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">JavaScript</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Bootstrap</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex-shrink-0 order-2 md:order-1 w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white shadow-md absolute left-1/2 transform -translate-x-1/2 md:left-6 md:translate-x-0">
-                            <i class="fas fa-laptop-code"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Network Monitoring Tool -->
-                <div class="relative timeline-item">
-                    <div class="flex flex-col md:flex-row items-center md:items-start">
-                        <div class="flex-1 order-1 md:order-2 md:ml-8">
-                            <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300 card-hover">
-                                <h3 class="text-xl font-bold text-gray-900 mb-2">DevOps Engineer</h3>
-                                <h4 class="text-lg font-medium text-gray-700 mb-2">Network Monitoring Tool (Academic Project)</h4>
-                                <div class="flex items-center text-gray-500 text-sm mb-4">
-                                    <i class="far fa-calendar-alt mr-2"></i>
-                                    <span>Apr 2024</span>
-                                </div>
-                                <p class="text-gray-600 mb-4">
-                                    Created a Python-based network monitoring solution that improved server response time by 25% through bottleneck analysis and automated Bash scripting alerts.
-                                </p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Python</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Bash</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Linux</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded">Networking</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex-shrink-0 order-2 md:order-1 w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white shadow-md absolute left-1/2 transform -translate-x-1/2 md:left-6 md:translate-x-0">
-                            <i class="fas fa-server"></i>
-                        </div>
-                    </div>
-                </div>
+          <div class="about-pillars" role="list">
+            <div class="about-pillar" role="listitem">
+              <div class="pillar-icon blue" aria-hidden="true"><i class="fas fa-code"></i></div>
+              <div>
+                <div class="pillar-title">Full Stack Dev</div>
+                <div class="pillar-desc">Building complete web apps front-to-back</div>
+              </div>
             </div>
-        </div>
-    </section>
+            <div class="about-pillar" role="listitem">
+              <div class="pillar-icon purple" aria-hidden="true"><i class="fas fa-server"></i></div>
+              <div>
+                <div class="pillar-title">DevOps & Cloud</div>
+                <div class="pillar-desc">Deploying scalable cloud infrastructure</div>
+              </div>
+            </div>
+            <div class="about-pillar" role="listitem">
+              <div class="pillar-icon green" aria-hidden="true"><i class="fas fa-shield-alt"></i></div>
+              <div>
+                <div class="pillar-title">Cyber Security</div>
+                <div class="pillar-desc">Security best practices in all projects</div>
+              </div>
+            </div>
+            <div class="about-pillar" role="listitem">
+              <div class="pillar-icon cyan" aria-hidden="true"><i class="fas fa-network-wired"></i></div>
+              <div>
+                <div class="pillar-title">MikroTik Networking</div>
+                <div class="pillar-desc">Expert in VLANs & fiber optic infrastructure</div>
+              </div>
+            </div>
+          </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-12 md:py-16 bg-white px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-4">
-                Featured <span class="gradient-text">Projects</span>
-            </h2>
-            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-8 md:mb-12 text-sm sm:text-base">
-                Here are some of my recent projects that showcase my skills and expertise.
+          <div class="about-socials">
+            <a href="https://github.com/Muchina27ke" class="social-link github"
+               target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+              <i class="fab fa-github" aria-hidden="true"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/gideon-muchina-9b027b261" class="social-link linkedin"
+               target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+              <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
+            </a>
+            <a href="https://twitter.com/" class="social-link twitter"
+               target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile">
+              <i class="fab fa-twitter" aria-hidden="true"></i> Twitter
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SKILLS
+  ════════════════════════════════════════════════════════════ -->
+  <section id="skills" aria-labelledby="skills-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Technical Expertise</span>
+        <h2 id="skills-heading">My <span class="gradient-text">Skills</span></h2>
+        <p>Core competencies I've honed across web development, networking, and system security.</p>
+      </div>
+
+      <div class="skills-grid" role="list">
+
+        <!-- JavaScript -->
+        <div class="skill-card reveal" role="listitem"
+             style="--card-gradient: linear-gradient(135deg,#eab308,#f59e0b)">
+          <div class="skill-icon-wrap" style="background:rgba(234,179,8,0.15);color:#fbbf24">
+            <i class="fab fa-js" aria-hidden="true"></i>
+          </div>
+          <div class="skill-name">JavaScript</div>
+          <div class="skill-desc">Advanced ES6+, frameworks, and tooling</div>
+          <div class="skill-bar-track" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript proficiency">
+            <div class="skill-bar-fill" data-width="90%"
+                 style="background:linear-gradient(90deg,#eab308,#f59e0b)"></div>
+          </div>
+          <span class="skill-pct">90%</span>
+        </div>
+
+        <!-- Elixir -->
+        <div class="skill-card reveal" role="listitem"
+             style="--card-gradient: linear-gradient(135deg,#8b5cf6,#6366f1)">
+          <div class="skill-icon-wrap" style="background:rgba(139,92,246,0.15);color:#a78bfa">
+            <i class="fas fa-atom" aria-hidden="true"></i>
+          </div>
+          <div class="skill-name">Elixir / Phoenix</div>
+          <div class="skill-desc">Functional programming & fault-tolerant systems</div>
+          <div class="skill-bar-track" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="Elixir proficiency">
+            <div class="skill-bar-fill" data-width="88%"
+                 style="background:linear-gradient(90deg,#8b5cf6,#6366f1)"></div>
+          </div>
+          <span class="skill-pct">88%</span>
+        </div>
+
+        <!-- Node.js -->
+        <div class="skill-card reveal" role="listitem"
+             style="--card-gradient: linear-gradient(135deg,#22c55e,#16a34a)">
+          <div class="skill-icon-wrap" style="background:rgba(34,197,94,0.15);color:#4ade80">
+            <i class="fab fa-node-js" aria-hidden="true"></i>
+          </div>
+          <div class="skill-name">Node.js</div>
+          <div class="skill-desc">Server-side JavaScript & REST API development</div>
+          <div class="skill-bar-track" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="Node.js proficiency">
+            <div class="skill-bar-fill" data-width="88%"
+                 style="background:linear-gradient(90deg,#22c55e,#16a34a)"></div>
+          </div>
+          <span class="skill-pct">88%</span>
+        </div>
+
+        <!-- Database Systems -->
+        <div class="skill-card reveal" role="listitem"
+             style="--card-gradient: linear-gradient(135deg,#6366f1,#4f46e5)">
+          <div class="skill-icon-wrap" style="background:rgba(99,102,241,0.15);color:#818cf8">
+            <i class="fas fa-database" aria-hidden="true"></i>
+          </div>
+          <div class="skill-name">Database Systems</div>
+          <div class="skill-desc">SQL design, PostgreSQL, MySQL & optimization</div>
+          <div class="skill-bar-track" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" aria-label="Database proficiency">
+            <div class="skill-bar-fill" data-width="82%"
+                 style="background:linear-gradient(90deg,#6366f1,#4f46e5)"></div>
+          </div>
+          <span class="skill-pct">82%</span>
+        </div>
+
+        <!-- Docker -->
+        <div class="skill-card reveal" role="listitem"
+             style="--card-gradient: linear-gradient(135deg,#06b6d4,#0284c7)">
+          <div class="skill-icon-wrap" style="background:rgba(6,182,212,0.15);color:#22d3ee">
+            <i class="fab fa-docker" aria-hidden="true"></i>
+          </div>
+          <div class="skill-name">Docker</div>
+          <div class="skill-desc">Containerization & microservices architecture</div>
+          <div class="skill-bar-track" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Docker proficiency">
+            <div class="skill-bar-fill" data-width="80%"
+                 style="background:linear-gradient(90deg,#06b6d4,#0284c7)"></div>
+          </div>
+          <span class="skill-pct">80%</span>
+        </div>
+
+        <!-- Cyber Security -->
+        <div class="skill-card reveal" role="listitem"
+             style="--card-gradient: linear-gradient(135deg,#ec4899,#8b5cf6)">
+          <div class="skill-icon-wrap" style="background:rgba(236,72,153,0.15);color:#f472b6">
+            <i class="fas fa-lock" aria-hidden="true"></i>
+          </div>
+          <div class="skill-name">Cyber Security</div>
+          <div class="skill-desc">Secure coding practices & vulnerability testing</div>
+          <div class="skill-bar-track" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Cyber Security proficiency">
+            <div class="skill-bar-fill" data-width="85%"
+                 style="background:linear-gradient(90deg,#ec4899,#8b5cf6)"></div>
+          </div>
+          <span class="skill-pct">85%</span>
+        </div>
+
+        <!-- MikroTik Networking -->
+        <div class="skill-card reveal" role="listitem"
+             style="--card-gradient: linear-gradient(135deg,#f97316,#ef4444)">
+          <div class="skill-icon-wrap" style="background:rgba(249,115,22,0.15);color:#fb923c">
+            <i class="fas fa-network-wired" aria-hidden="true"></i>
+          </div>
+          <div class="skill-name">MikroTik Networking</div>
+          <div class="skill-desc">Advanced RouterOS, VLANs & fiber infrastructure</div>
+          <div class="skill-bar-track" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="MikroTik proficiency">
+            <div class="skill-bar-fill" data-width="92%"
+                 style="background:linear-gradient(90deg,#f97316,#ef4444)"></div>
+          </div>
+          <span class="skill-pct">92%</span>
+        </div>
+
+        <!-- PHP -->
+        <div class="skill-card reveal" role="listitem"
+             style="--card-gradient: linear-gradient(135deg,#7c3aed,#4f46e5)">
+          <div class="skill-icon-wrap" style="background:rgba(124,58,237,0.15);color:#a78bfa">
+            <i class="fab fa-php" aria-hidden="true"></i>
+          </div>
+          <div class="skill-name">PHP / MySQL</div>
+          <div class="skill-desc">Server-side scripting & web backend development</div>
+          <div class="skill-bar-track" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" aria-label="PHP proficiency">
+            <div class="skill-bar-fill" data-width="78%"
+                 style="background:linear-gradient(90deg,#7c3aed,#4f46e5)"></div>
+          </div>
+          <span class="skill-pct">78%</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CERTIFICATIONS
+  ════════════════════════════════════════════════════════════ -->
+  <section id="certifications" aria-labelledby="certs-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Credentials</span>
+        <h2 id="certs-heading">My <span class="gradient-text">Certifications</span></h2>
+        <p>Professional certifications validating my skills and ongoing commitment to learning.</p>
+      </div>
+
+      <div class="certs-grid" role="list">
+
+        <!-- BSc IT -->
+        <div class="cert-card reveal" role="listitem">
+          <div class="cert-header" style="background:linear-gradient(135deg,#1e40af 0%,#3b82f6 100%)">
+            <i class="fas fa-graduation-cap cert-header-icon" aria-hidden="true"></i>
+            <span class="cert-badge">Degree</span>
+          </div>
+          <div class="cert-body">
+            <h3 class="cert-title">Bachelor of Science in Information Technology</h3>
+            <div class="cert-issuer"><i class="fas fa-university" aria-hidden="true"></i> KCA University</div>
+            <div class="cert-date">
+              <i class="far fa-calendar-alt" aria-hidden="true"></i>
+              <span>2021 – 2025</span>
+            </div>
+            <p class="cert-desc">
+              Comprehensive study in software development, networking, database management, and cybersecurity.
             </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                <!-- Project 1 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 card-hover">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="e-commerce.png" 
-                             alt="E-Commerce Platform" 
-                             class="w-full h-full object-cover transition duration-500 hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4">
-                            <span class="bg-blue-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">Full Stack</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">E-Commerce Platform</h3>
-                        <p class="text-gray-600 mb-4">
-                            A complete e-commerce solution with payment integration, inventory management, and analytics dashboard.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">React</span>
-                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">PHP</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">MySQL</span>
-                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-0.5 rounded">Daraja API</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
-                                View Project <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                            <a href="https://github.com/Muchina27ke" class="text-gray-500 hover:text-gray-700">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 card-hover">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="ms.png" 
-                             alt="Daycare Management System" 
-                             class="w-full h-full object-cover transition duration-500 hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4">
-                            <span class="bg-green-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">Web-based App</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Daycare Management System</h3>
-                        <p class="text-gray-600 mb-4">
-                            Cross-platform app based on the website for easy communication between parents and babysitters.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">React Native</span>
-                            <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">MySQL</span>
-                            <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded">JavaScript</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
-                                View Project <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                            <a href="https://github.com/Muchina27ke/DAYCARE-MANAGEMENT-SYSTEM-MUCHINA" class="text-gray-500 hover:text-gray-700">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 card-hover">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="prt.png" 
-                             alt="Business & Personal Portfolios" 
-                             class="w-full h-full object-cover transition duration-500 hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        <div class="absolute bottom-4 left-4">
-                            <span class="bg-purple-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">Portfolios</span>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Business & Personal Portfolios</h3>
-                        <p class="text-gray-600 mb-4">
-                            Real-time data visualization portfolios with interactive capabilities.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-400 text-white text-xs font-medium px-2.5 py-0.5 rounded">JavaScript</span>
-                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded">Python</span>
-                            <span class="bg-green-500 text-white text-xs font-medium px-2.5 py-0.5 rounded">MySQL</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
-                                View Project <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                            <a href="https://github.com/Muchina27ke/who_is_Gideon_Muchina" class="text-gray-500 hover:text-gray-700">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="https://github.com/Muchina27ke" class="inline-flex items-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
-                    View All Projects <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-            </div>
+            <a class="cert-action muted" aria-label="BSc IT — Completed">
+              Completed <i class="fas fa-check-circle" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-12 md:py-16 bg-gray-50 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-4">
-                Get In <span class="gradient-text">Touch</span>
-            </h2>
-            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-8 md:mb-12 text-sm sm:text-base">
-                Have a project in mind or want to discuss potential opportunities? Feel free to reach out!
+        <!-- Java Certification -->
+        <div class="cert-card reveal" role="listitem">
+          <div class="cert-header" style="background:linear-gradient(135deg,#dc2626 0%,#f97316 100%)">
+            <i class="fab fa-java cert-header-icon" aria-hidden="true"></i>
+            <span class="cert-badge">Programming</span>
+          </div>
+          <div class="cert-body">
+            <h3 class="cert-title">Java Programming Certification</h3>
+            <div class="cert-issuer"><i class="fas fa-building" aria-hidden="true"></i> Kenswed TVET</div>
+            <div class="cert-date">
+              <i class="far fa-calendar-alt" aria-hidden="true"></i>
+              <span>2023</span>
+            </div>
+            <p class="cert-desc">
+              Certified in Java programming fundamentals, OOP concepts, and application development.
             </p>
-            
-            <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
-                <div class="w-full lg:w-1/2">
-                    <form class="contact-form" action="https://formspree.io/f/mwpnynve" method="POST">
-                        <div class="mb-4 sm:mb-6">
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                            <input type="text" id="name" name="name" required 
-                                   class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300 text-sm sm:text-base">
-                        </div>
-                        
-                        <div class="mb-4 sm:mb-6">
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                            <input type="email" id="email" name="email" required 
-                                   class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300 text-sm sm:text-base">
-                        </div>
-                        
-                        <div class="mb-4 sm:mb-6">
-                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
-                            <input type="text" id="subject" name="subject" required 
-                                   class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300 text-sm sm:text-base">
-                        </div>
-                        
-                        <div class="mb-4 sm:mb-6">
-                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                            <textarea id="message" name="message" rows="4" required 
-                                      class="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300 text-sm sm:text-base"></textarea>
-                        </div>
-                        
-                        <div>
-                            <button type="submit" 
-                                    class="w-full gradient-bg hover:opacity-90 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition duration-300 flex items-center justify-center text-sm sm:text-base">
-                                Send Message <i class="fas fa-paper-plane ml-2"></i>
-                            </button>
-                        </div>
-                    </form>
-                    
-                    <div id="form-message" class="mt-4 hidden p-4 rounded-lg"></div>
-                </div>
-                
-                <div class="w-full lg:w-1/2 mt-8 lg:mt-0">
-                    <div class="bg-white p-8 rounded-xl h-full shadow-sm">
-                        <h3 class="text-xl font-bold text-gray-900 mb-6">Contact Information</h3>
-                        
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="bg-blue-100 p-3 rounded-full mr-4">
-                                    <i class="fas fa-map-marker-alt text-blue-600"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-medium text-gray-800">Location</h4>
-                                    <p class="text-gray-600">Nairobi, Kenya</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="bg-green-100 p-3 rounded-full mr-4">
-                                    <i class="fas fa-envelope text-green-600"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-medium text-gray-800">Email</h4>
-                                    <p class="text-gray-600">gideonmuchina381@gmail.com</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="bg-purple-100 p-3 rounded-full mr-4">
-                                    <i class="fas fa-phone-alt text-purple-600"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-medium text-gray-800">Phone</h4>
-                                    <p class="text-gray-600">+254 717 632 437</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="bg-yellow-100 p-3 rounded-full mr-4">
-                                    <i class="fas fa-university text-yellow-600"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-medium text-gray-800">Education</h4>
-                                    <p class="text-gray-600">KCA University<br>BSc IT (2021-2025)</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-8">
-                            <h4 class="font-medium text-gray-800 mb-4">Connect</h4>
-                            <div class="flex space-x-4">
-                                <a href="https://github.com/Muchina27ke" 
-                                   class="bg-gray-200 hover:bg-gray-800 hover:text-white p-3 rounded-full transition duration-300 text-gray-700"
-                                   aria-label="GitHub Profile"
-                                   title="View my GitHub projects">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/in/gideon-muchina-9b027b261" 
-                                   class="bg-gray-200 hover:bg-blue-600 hover:text-white p-3 rounded-full transition duration-300 text-gray-700"
-                                   aria-label="LinkedIn Profile"
-                                   title="Connect on LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="Muchina27ke" 
-                                   class="bg-gray-200 hover:bg-indigo-600 hover:text-white p-3 rounded-full transition duration-300 text-gray-700"
-                                   aria-label="Portfolio Website"
-                                   title="Visit my Portfolio">
-                                    <i class="fas fa-briefcase"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <a href="Gideon-Muchina-Java-Cert.pdf" class="cert-action"
+               download aria-label="Download Java Certificate">
+              Download Certificate <i class="fas fa-download" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold gradient-text mb-4">Gideon Muchina</h3>
-                    <p class="text-gray-400">
-                        Building innovative digital solutions to transform businesses and enhance user experiences.
-                    </p>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About</a></li>
-                        <li><a href="#skills" class="text-gray-400 hover:text-white transition duration-300">Skills</a></li>
-                        <li><a href="#certifications" class="text-gray-400 hover:text-white transition duration-300">Certifications</a></li>
-                        <li><a href="#experience" class="text-gray-400 hover:text-white transition duration-300">Experience</a></li>
-                        <li><a href="#projects" class="text-gray-400 hover:text-white transition duration-300">Projects</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Technical Expertise</h4>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <i class="fas fa-database text-blue-400 mr-2 w-4"></i>
-                            <span class="text-gray-400">Database Administration</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-code text-blue-400 mr-2 w-4"></i>
-                            <span class="text-gray-400">Full-Stack Development</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-network-wired text-blue-400 mr-2 w-4"></i>
-                            <span class="text-gray-400">MikroTik & VLAN Solutions</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-tools text-blue-400 mr-2 w-4"></i>
-                            <span class="text-gray-400">IT Support & Troubleshooting</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-shield-alt text-blue-400 mr-2 w-4"></i>
-                            <span class="text-gray-400">System Security</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
-                    <p class="text-gray-400 mb-4">
-                        Subscribe to my newsletter for the latest updates and insights.
-                    </p>
-                    <form class="flex">
-                        <input type="email" placeholder="Your email" 
-                               class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-900">
-                        <button type="submit" 
-                                class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-lg transition duration-300">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
+        <!-- Hikvision -->
+        <div class="cert-card reveal" role="listitem">
+          <div class="cert-header" style="background:linear-gradient(135deg,#012b69 0%,#2c5aa0 100%)">
+            <i class="fas fa-video cert-header-icon" aria-hidden="true"></i>
+            <span class="cert-badge">Security Tech</span>
+          </div>
+          <div class="cert-body">
+            <h3 class="cert-title">Hikvision Certification</h3>
+            <div class="cert-issuer"><i class="fas fa-building" aria-hidden="true"></i> Hikvision Technical Training</div>
+            <div class="cert-date">
+              <i class="far fa-calendar-alt" aria-hidden="true"></i>
+              <span>2025</span>
             </div>
-            
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm">
-                    &copy; 2024 Gideon Muchina. All rights reserved.
-                </p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Privacy Policy</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Terms of Service</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300 text-sm">Sitemap</a>
-                </div>
-            </div>
+            <p class="cert-desc">
+              Certified in Hikvision security systems — installation, configuration, and IP network surveillance.
+            </p>
+            <a href="Hikvision Cert-Gideon_Muchina.pdf" class="cert-action"
+               download aria-label="Download Hikvision Certificate">
+              Download Certificate <i class="fas fa-download" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
-    </footer>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+        <!-- AWS — In Progress -->
+        <div class="cert-card reveal" role="listitem">
+          <div class="cert-header" style="background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 100%)">
+            <i class="fab fa-aws cert-header-icon" aria-hidden="true"></i>
+            <span class="cert-badge">Cloud</span>
+          </div>
+          <div class="cert-body">
+            <h3 class="cert-title">AWS Cloud Practitioner</h3>
+            <div class="cert-issuer"><i class="fas fa-cloud" aria-hidden="true"></i> Amazon Web Services</div>
+            <div class="cert-date">
+              <i class="far fa-calendar-alt" aria-hidden="true"></i>
+              <span>In Progress</span>
+            </div>
+            <p class="cert-desc">
+              Cloud fundamentals and AWS services knowledge certification for cloud practitioners.
+            </p>
+            <span class="cert-action in-progress" aria-label="AWS certification in progress">
+              In Progress <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+            </span>
+          </div>
+        </div>
 
-    <!-- JavaScript -->
-    <script>
-        // Mobile menu toggle
-        document.getElementById('menu-btn').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
+      </div>
+    </div>
+  </section>
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    const mobileMenu = document.getElementById('mobile-menu');
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        });
 
-        // Back to top button
-        const backToTopButton = document.getElementById('back-to-top');
-        
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.remove('opacity-0', 'invisible');
-                backToTopButton.classList.add('opacity-100', 'visible');
-            } else {
-                backToTopButton.classList.remove('opacity-100', 'visible');
-                backToTopButton.classList.add('opacity-0', 'invisible');
-            }
-        });
-        
-        backToTopButton.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+  <!-- ═══════════════════════════════════════════════════════════
+       EXPERIENCE
+  ════════════════════════════════════════════════════════════ -->
+  <section id="experience" aria-labelledby="exp-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Work History</span>
+        <h2 id="exp-heading">Work <span class="gradient-text">Experience</span></h2>
+        <p>A timeline of roles where I've built real-world solutions and sharpened my craft.</p>
+      </div>
 
-        // Form submission handling
-        const contactForm = document.querySelector('.contact-form');
-        const formMessage = document.getElementById('form-message');
-        
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Simulate form submission (in a real scenario, this would be an AJAX call to the PHP file)
-                formMessage.textContent = "Thank you for your message! I'll get back to you soon.";
-                formMessage.classList.remove('hidden', 'bg-red-100', 'text-red-700');
-                formMessage.classList.add('bg-green-100', 'text-green-700');
-                
-                // Reset form
-                contactForm.reset();
-                
-                // Show message
-                formMessage.classList.remove('hidden');
-                
-                // Hide message after 5 seconds
-                setTimeout(() => {
-                    formMessage.classList.add('hidden');
-                }, 5000);
-            });
-        }
+      <div class="timeline" role="list">
 
-        // Animate elements when they come into view
-        const animateOnScroll = function() {
-            const elements = document.querySelectorAll('.card-hover, .floating, .timeline-item');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
-            });
+        <!-- ispman.tech — Current -->
+        <div class="timeline-item" role="listitem">
+          <div class="timeline-dot" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"
+               aria-hidden="true">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <h3 class="timeline-title">Junior Developer</h3>
+              <span class="tag tag-success">Current</span>
+            </div>
+            <div class="timeline-company">
+              <i class="fas fa-building" aria-hidden="true"></i> ispman.tech — Nairobi, Kenya
+            </div>
+            <div class="timeline-date">
+              <i class="far fa-calendar-alt" aria-hidden="true"></i> 2025 – Present
+            </div>
+            <p class="timeline-desc">
+              Developing robust web applications using Elixir and Phoenix framework. Building scalable,
+              fault-tolerant systems with real-time features and implementing modern web practices for
+              enterprise-level applications.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag tag-purple">Elixir</span>
+              <span class="tag tag-purple">Phoenix Framework</span>
+              <span class="tag tag-accent">LiveView</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">OTP</span>
+            </div>
+          </div>
+        </div>
 
-            // Animate progress bars
-            const progressBars = document.querySelectorAll('.progress-bar');
-            progressBars.forEach(bar => {
-                const elementPosition = bar.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                
-                if (elementPosition < screenPosition) {
-                    bar.style.width = bar.style.width;
-                }
-            });
-        };
+        <!-- VITUIT — MikroTik -->
+        <div class="timeline-item" role="listitem">
+          <div class="timeline-dot" style="background:linear-gradient(135deg,#06b6d4,#0284c7)"
+               aria-hidden="true">
+            <i class="fas fa-network-wired"></i>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <h3 class="timeline-title">MikroTik Networking Specialist</h3>
+              <span class="tag tag-accent">2024</span>
+            </div>
+            <div class="timeline-company">
+              <i class="fas fa-building" aria-hidden="true"></i> VITUIT — Westlands, Nairobi
+            </div>
+            <div class="timeline-date">
+              <i class="far fa-calendar-alt" aria-hidden="true"></i> 2024
+            </div>
+            <p class="timeline-desc">
+              Specialized in enterprise MikroTik router configurations and fiber optic implementations.
+              Configured advanced VLAN setups for internet distribution, managed network security
+              protocols, and optimized bandwidth for multiple client networks using RouterOS.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag tag-orange">MikroTik RouterOS</span>
+              <span class="tag">VLAN Configuration</span>
+              <span class="tag">Fiber Optic Networks</span>
+              <span class="tag">Network Security</span>
+              <span class="tag">Bandwidth Management</span>
+            </div>
+          </div>
+        </div>
 
-        // Set initial state for animated elements
-        document.querySelectorAll('.card-hover, .floating, .timeline-item').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        });
+        <!-- IMFUYO.FARM -->
+        <div class="timeline-item" role="listitem">
+          <div class="timeline-dot" style="background:linear-gradient(135deg,#10b981,#059669)"
+               aria-hidden="true">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <h3 class="timeline-title">Web Developer & Digital Manager</h3>
+              <span class="tag tag-warning">2025</span>
+            </div>
+            <div class="timeline-company">
+              <i class="fas fa-leaf" aria-hidden="true"></i> IMFUYO.FARM — Agricultural Technology
+            </div>
+            <div class="timeline-date">
+              <i class="far fa-calendar-alt" aria-hidden="true"></i> Aug 2025 – Nov 2025
+            </div>
+            <p class="timeline-desc">
+              Developed and maintained the company's web presence, implemented e-commerce solutions
+              for agricultural products, and managed digital marketing strategies to increase brand
+              visibility and customer engagement.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag tag-primary">Web Development</span>
+              <span class="tag">E-commerce</span>
+              <span class="tag">Digital Marketing</span>
+              <span class="tag">Content Management</span>
+            </div>
+          </div>
+        </div>
 
-        // Run once on load
-        window.addEventListener('load', function() {
-            animateOnScroll();
-            
-            // Add typewriter effect
-            const typewriter = document.querySelector('.typewriter');
-            if (typewriter) {
-                typewriter.style.animation = 'none';
-                setTimeout(() => {
-                    typewriter.style.animation = '';
-                }, 100);
-            }
-        });
-        
-        // Then run on scroll
-        window.addEventListener('scroll', animateOnScroll);
-    </script>
+        <!-- KCA IT Support -->
+        <div class="timeline-item" role="listitem">
+          <div class="timeline-dot" style="background:linear-gradient(135deg,#8b5cf6,#6366f1)"
+               aria-hidden="true">
+            <i class="fas fa-desktop"></i>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <h3 class="timeline-title">IT Support Assistant</h3>
+              <span class="tag tag-purple">2023 – 2025</span>
+            </div>
+            <div class="timeline-company">
+              <i class="fas fa-university" aria-hidden="true"></i> KCA University
+            </div>
+            <div class="timeline-date">
+              <i class="far fa-calendar-alt" aria-hidden="true"></i> 2023 – 2025
+            </div>
+            <p class="timeline-desc">
+              Resolved 50+ weekly technical issues including network outages and software bugs,
+              reducing campus IT downtime by 25%. Collaborated with IT teams to deploy security
+              patches across 200+ devices.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">Windows / Linux</span>
+              <span class="tag">Network Troubleshooting</span>
+              <span class="tag">Cybersecurity</span>
+              <span class="tag">Jira</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swiss BearsDaycare — Academic -->
+        <div class="timeline-item" role="listitem">
+          <div class="timeline-dot" style="background:linear-gradient(135deg,#f59e0b,#f97316)"
+               aria-hidden="true">
+            <i class="fas fa-code-branch"></i>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <h3 class="timeline-title">Full Stack Developer</h3>
+              <span class="tag tag-warning">2024</span>
+            </div>
+            <div class="timeline-company">
+              <i class="fas fa-child" aria-hidden="true"></i> Swiss BearsDaycare (Academic Project)
+            </div>
+            <div class="timeline-date">
+              <i class="far fa-calendar-alt" aria-hidden="true"></i> 2024
+            </div>
+            <p class="timeline-desc">
+              Developed a full-stack web application using PHP/MySQL that reduced administrative
+              workload by 30% through automated reports and real-time parent notifications.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">PHP</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">REST APIs</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       PROJECTS
+  ════════════════════════════════════════════════════════════ -->
+  <section id="projects" aria-labelledby="projects-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Portfolio</span>
+        <h2 id="projects-heading">Recent <span class="gradient-text">Projects</span></h2>
+        <p>A showcase of projects that demonstrate my skills and problem-solving approach.</p>
+      </div>
+
+      <div class="projects-grid" role="list">
+
+        <!-- E-Commerce Platform -->
+        <div class="project-card reveal" role="listitem">
+          <div class="project-img">
+            <img src="e-commerce.png" alt="E-Commerce Platform screenshot" loading="lazy">
+            <div class="project-overlay" aria-hidden="true"></div>
+            <div class="project-category">
+              <span class="tag tag-primary">Full Stack</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">E-Commerce Platform</h3>
+            <p class="project-desc">
+              A complete e-commerce solution with M-Pesa Daraja payment integration, inventory
+              management, and analytics dashboard.
+            </p>
+            <div class="project-tags">
+              <span class="tag tag-accent">React</span>
+              <span class="tag">PHP</span>
+              <span class="tag">MySQL</span>
+              <span class="tag tag-warning">Daraja API</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Muchina27ke" class="project-link"
+                 target="_blank" rel="noopener noreferrer" aria-label="View E-Commerce project">
+                View Project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+              <a href="https://github.com/Muchina27ke" class="project-github"
+                 target="_blank" rel="noopener noreferrer" aria-label="E-Commerce GitHub repository">
+                <i class="fab fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Daycare Management System -->
+        <div class="project-card reveal" role="listitem">
+          <div class="project-img">
+            <img src="ms.png" alt="Daycare Management System screenshot" loading="lazy">
+            <div class="project-overlay" aria-hidden="true"></div>
+            <div class="project-category">
+              <span class="tag tag-success">Web-based App</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Daycare Management System</h3>
+            <p class="project-desc">
+              Cross-platform app for seamless communication between parents and daycare staff,
+              with real-time notifications and automated reporting.
+            </p>
+            <div class="project-tags">
+              <span class="tag tag-primary">React Native</span>
+              <span class="tag">MySQL</span>
+              <span class="tag tag-warning">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Muchina27ke/DAYCARE-MANAGEMENT-SYSTEM-MUCHINA" class="project-link"
+                 target="_blank" rel="noopener noreferrer" aria-label="View Daycare project">
+                View Project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+              <a href="https://github.com/Muchina27ke/DAYCARE-MANAGEMENT-SYSTEM-MUCHINA" class="project-github"
+                 target="_blank" rel="noopener noreferrer" aria-label="Daycare GitHub repository">
+                <i class="fab fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio -->
+        <div class="project-card reveal" role="listitem">
+          <div class="project-img">
+            <img src="prt.png" alt="Business and Personal Portfolios screenshot" loading="lazy">
+            <div class="project-overlay" aria-hidden="true"></div>
+            <div class="project-category">
+              <span class="tag tag-purple">Portfolios</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Business &amp; Personal Portfolios</h3>
+            <p class="project-desc">
+              Real-time data visualization portfolios with interactive capabilities and dynamic
+              content for businesses and professionals.
+            </p>
+            <div class="project-tags">
+              <span class="tag tag-warning">JavaScript</span>
+              <span class="tag tag-orange">Python</span>
+              <span class="tag">MySQL</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Muchina27ke/who_is_Gideon_Muchina" class="project-link"
+                 target="_blank" rel="noopener noreferrer" aria-label="View Portfolios project">
+                View Project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+              <a href="https://github.com/Muchina27ke/who_is_Gideon_Muchina" class="project-github"
+                 target="_blank" rel="noopener noreferrer" aria-label="Portfolios GitHub repository">
+                <i class="fab fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="projects-more">
+        <a href="https://github.com/Muchina27ke" class="btn btn-outline"
+           target="_blank" rel="noopener noreferrer" id="view-all-projects">
+          View All on GitHub <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CONTACT
+  ════════════════════════════════════════════════════════════ -->
+  <section id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Get In Touch</span>
+        <h2 id="contact-heading">Let's <span class="gradient-text">Connect</span></h2>
+        <p>Have a project in mind or want to discuss opportunities? Drop me a message!</p>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Form -->
+        <div class="contact-form-wrap reveal">
+          <h3>Send a Message</h3>
+          <p>I usually respond within 24 hours.</p>
+          <form id="contact-form" action="https://formspree.io/f/mwpnynve" method="POST"
+                novalidate aria-label="Contact form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required
+                       placeholder="John Doe" autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required
+                       placeholder="john@example.com" autocomplete="email">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required
+                     placeholder="Project inquiry / Collaboration">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required
+                        placeholder="Tell me about your project or opportunity…"></textarea>
+            </div>
+            <button type="submit" id="submit-btn" class="btn-submit">
+              Send Message <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            </button>
+            <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <!-- Info -->
+        <div class="contact-info reveal">
+          <h3>Contact Information</h3>
+          <p>Based in Nairobi, Kenya. Open to remote and on-site opportunities worldwide.</p>
+
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-item-icon" style="background:rgba(99,102,241,0.15);color:var(--primary-light)">
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              </div>
+              <div>
+                <div class="contact-item-label">Location</div>
+                <div class="contact-item-value">Nairobi, Kenya</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon" style="background:rgba(16,185,129,0.15);color:#34d399">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+              </div>
+              <div>
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-value">
+                  <a href="mailto:gideonmuchina381@gmail.com" style="color:inherit">
+                    gideonmuchina381@gmail.com
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon" style="background:rgba(139,92,246,0.15);color:#a78bfa">
+                <i class="fas fa-phone-alt" aria-hidden="true"></i>
+              </div>
+              <div>
+                <div class="contact-item-label">Phone</div>
+                <div class="contact-item-value">
+                  <a href="tel:+254717632437" style="color:inherit">+254 717 632 437</a>
+                </div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon" style="background:rgba(245,158,11,0.15);color:#fbbf24">
+                <i class="fas fa-university" aria-hidden="true"></i>
+              </div>
+              <div>
+                <div class="contact-item-label">Education</div>
+                <div class="contact-item-value">KCA University — BSc IT (2021–2025)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-divider" aria-hidden="true"></div>
+
+          <div class="contact-socials">
+            <h4>Connect with me</h4>
+            <div class="social-icons">
+              <a href="https://github.com/Muchina27ke" class="social-icon"
+                 target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" title="GitHub">
+                <i class="fab fa-github" aria-hidden="true"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/gideon-muchina-9b027b261" class="social-icon"
+                 target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" title="LinkedIn">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+              </a>
+              <a href="https://twitter.com/" class="social-icon"
+                 target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile" title="Twitter">
+                <i class="fab fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="mailto:gideonmuchina381@gmail.com" class="social-icon"
+                 aria-label="Send Email" title="Email">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <span class="logo gradient-text">Gideon Muchina</span>
+          <p>Building innovative digital solutions to transform businesses and enhance user experiences.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Technical Expertise</h4>
+          <ul class="footer-expertise">
+            <li><i class="fas fa-database" aria-hidden="true"></i> Database Administration</li>
+            <li><i class="fas fa-code" aria-hidden="true"></i> Full-Stack Development</li>
+            <li><i class="fas fa-network-wired" aria-hidden="true"></i> MikroTik &amp; VLAN Solutions</li>
+            <li><i class="fas fa-tools" aria-hidden="true"></i> IT Support &amp; Troubleshooting</li>
+            <li><i class="fas fa-shield-alt" aria-hidden="true"></i> System Security</li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Subscribe for the latest updates and tech insights from my work.</p>
+          <form class="newsletter-form" aria-label="Newsletter subscription">
+            <input type="email" placeholder="your@email.com" autocomplete="email" aria-label="Email for newsletter">
+            <button type="submit" aria-label="Subscribe to newsletter">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; 2026 <span>Gideon Muchina</span>. All rights reserved.
+        </p>
+        <nav class="footer-legal" aria-label="Legal links">
+          <a href="#" aria-label="Privacy Policy">Privacy Policy</a>
+          <a href="#" aria-label="Terms of Service">Terms of Service</a>
+          <a href="#" aria-label="Sitemap">Sitemap</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="back-to-top" aria-label="Scroll back to top" title="Back to top">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="main.js" defer></script>
 </body>
 </html>
