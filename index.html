@@ -3,29 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gideon Muchina | Full Stack Developer & IT Specialist</title>
-  <meta name="description" content="Gideon Muchina — Full Stack Developer, IT Specialist, and MikroTik Networking Expert based in Nairobi, Kenya. Building scalable web apps with Elixir, Node.js, and modern technologies.">
+  <title>Gideon Muchina | Head of Technical Support &amp; Network Specialist</title>
+  <meta name="description" content="Gideon Muchina — Head of Technical Support @ Leading ISP Tech Firm, ISP Infrastructure & MikroTik Specialist, Elixir/Phoenix Developer & ALX Software Engineering graduate. Based in Nairobi, Kenya.">
   <meta name="author" content="Gideon Muchina">
-  <meta property="og:title" content="Gideon Muchina | Full Stack Developer">
-  <meta property="og:description" content="Portfolio of Gideon Muchina — Full Stack Developer & MikroTik Networking Expert.">
+  <meta property="og:title" content="Gideon Muchina | Head of Tech Support · ISP & Network Specialist">
+  <meta property="og:description" content="Portfolio of Gideon Muchina — Head of Technical Support, ISP Infrastructure & MikroTik Specialist, Elixir/Ash Developer, MTCNA candidate.">
   <meta property="og:type" content="website">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Styles -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
+
+  <!-- Ambient Glow Overlay -->
+  <div class="ambient-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow bg-glow-2" aria-hidden="true"></div>
 
   <!-- ═══════════════════════════════════════════════════════════
        NAVIGATION
   ════════════════════════════════════════════════════════════ -->
   <nav id="navbar" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="#home" class="nav-logo" aria-label="Gideon Muchina - Home">Gideon Muchina</a>
+      <a href="#home" class="nav-logo" aria-label="Gideon Muchina - Home">
+        <span class="logo-icon"><i class="fas fa-terminal"></i></span>
+        <span class="logo-text">Gideon<span class="gradient-text">.Muchina</span></span>
+      </a>
 
       <div class="nav-links" role="menubar">
         <a href="#home"           class="nav-link" data-section="home"           role="menuitem">Home</a>
@@ -37,87 +45,98 @@
         <a href="#contact"        class="nav-link" data-section="contact"        role="menuitem">Contact</a>
       </div>
 
-      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav-cta-wrap">
+        <a href="#contact" class="btn btn-sm btn-primary nav-cta">Let's Connect</a>
+        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
-  <!-- Mobile menu -->
+  <!-- Mobile Menu Drawer -->
   <div id="nav-mobile" class="nav-mobile" role="menu" aria-label="Mobile navigation">
-    <a href="#home"           class="nav-link" role="menuitem">Home</a>
-    <a href="#about"          class="nav-link" role="menuitem">About</a>
-    <a href="#skills"         class="nav-link" role="menuitem">Skills</a>
-    <a href="#certifications" class="nav-link" role="menuitem">Certifications</a>
-    <a href="#experience"     class="nav-link" role="menuitem">Experience</a>
-    <a href="#projects"       class="nav-link" role="menuitem">Projects</a>
-    <a href="#contact"        class="nav-link" role="menuitem">Contact</a>
+    <a href="#home"           class="nav-link" role="menuitem"><i class="fas fa-home"></i> Home</a>
+    <a href="#about"          class="nav-link" role="menuitem"><i class="fas fa-user"></i> About</a>
+    <a href="#skills"         class="nav-link" role="menuitem"><i class="fas fa-laptop-code"></i> Skills</a>
+    <a href="#certifications" class="nav-link" role="menuitem"><i class="fas fa-certificate"></i> Certifications</a>
+    <a href="#experience"     class="nav-link" role="menuitem"><i class="fas fa-briefcase"></i> Experience</a>
+    <a href="#projects"       class="nav-link" role="menuitem"><i class="fas fa-folder-open"></i> Projects</a>
+    <a href="#contact"        class="nav-link" role="menuitem"><i class="fas fa-paper-plane"></i> Contact</a>
   </div>
 
 
   <!-- ═══════════════════════════════════════════════════════════
        HERO
-  ════════════════════════════════════════════════════════════ -->
+  ═══════════════════════════════════════════════════════════ -->
   <section id="home" aria-label="Introduction">
     <div class="container">
       <div class="hero-inner">
         <!-- Content -->
         <div class="hero-content">
           <div class="hero-badge">
-            <span class="dot" aria-hidden="true"></span>
-            Available for opportunities
+            <span class="pulse-dot" aria-hidden="true"></span>
+            Head of Technical Support @ Leading ISP Tech Firm
           </div>
 
           <h1 class="hero-title">
-            Hi, I'm <span class="gradient-text">Gideon Muchina</span>
+            Hi, I'm <span class="gradient-text">Gideon Muchina</span> 👋
           </h1>
 
-          <p class="hero-subtitle">
-            <span class="typewriter-text" aria-live="polite">Full Stack Developer</span>
-          </p>
+          <div class="hero-subtitle">
+            <span class="typewriter-prefix">&gt; </span>
+            <span class="typewriter-text" aria-live="polite">ISP Infrastructure &amp; MikroTik Specialist</span>
+          </div>
 
           <p class="hero-description">
-            I build exceptional digital experiences with clean, efficient code
-            and specialize in enterprise networking solutions using MikroTik
-            routers, VLANs, and fiber optic infrastructure.
+            Head of Technical Support at a leading ISP solutions firm. Specialist in <strong>ISP Infrastructure, MikroTik RouterOS, RADIUS, PPPoE, WireGuard &amp; VLANs</strong>, alongside full-stack engineering using <strong>Elixir / Phoenix / Ash Framework</strong> and Node.js. ALX Africa Software Engineering Certified &amp; BSc IT Graduate.
           </p>
 
           <div class="hero-actions">
             <a href="#projects" class="btn btn-primary" id="hero-view-work">
-              View My Work <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              View Featured Work <i class="fas fa-arrow-right" aria-hidden="true"></i>
             </a>
-            <a href="#contact" class="btn btn-outline" id="hero-contact">
-              Contact Me
+            <a href="https://about-me-eta-ebon.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="hero-live-demo">
+              Live Vercel Site <i class="fas fa-external-link-alt" aria-hidden="true"></i>
             </a>
           </div>
 
-          <div class="hero-stats" aria-label="Quick stats">
-            <div>
-              <div class="hero-stat-value">2+</div>
-              <div class="hero-stat-label">Years Experience</div>
+          <!-- Animated Stat Ticker -->
+          <div class="hero-stats" aria-label="Key highlights">
+            <div class="hero-stat-card">
+              <div class="hero-stat-value" data-count="1">1+</div>
+              <div class="hero-stat-label">Years ISP &amp; Network Support</div>
             </div>
-            <div>
-              <div class="hero-stat-value">10+</div>
+            <div class="hero-stat-card">
+              <div class="hero-stat-value" data-count="2">2+</div>
+              <div class="hero-stat-label">Years Software Dev</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="hero-stat-value" data-count="6">6</div>
+              <div class="hero-stat-label">Certifications &amp; Degrees</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="hero-stat-value" data-count="10">10+</div>
               <div class="hero-stat-label">Projects Delivered</div>
-            </div>
-            <div>
-              <div class="hero-stat-value">3</div>
-              <div class="hero-stat-label">Certifications</div>
             </div>
           </div>
         </div>
 
-        <!-- Image -->
+        <!-- Hero Avatar Frame -->
         <div class="hero-image-wrap">
-          <div class="hero-image-ring">
-            <!-- Orbital rings -->
-            <div class="orbit orbit-1" aria-hidden="true">
-              <div class="orbit-dot"></div>
-            </div>
-            <div class="orbit orbit-2" aria-hidden="true">
-              <div class="orbit-dot"></div>
-            </div>
-            <img src="myself.png" alt="Gideon Muchina" loading="eager">
+          <div class="hero-glow-ring"></div>
+          <div class="hero-image-frame">
+            <img src="myself.png" alt="Gideon Muchina - Head of Technical Support & Network Specialist" loading="eager">
+          </div>
+          <!-- Tech Floating Badges -->
+          <div class="floating-chip chip-1">
+            <i class="fas fa-network-wired text-cyan"></i> MikroTik &amp; RADIUS / PPPoE
+          </div>
+          <div class="floating-chip chip-2">
+            <i class="fas fa-code text-purple"></i> Elixir / Phoenix / Ash
+          </div>
+          <div class="floating-chip chip-3">
+            <i class="fas fa-award text-green"></i> ALX Certified &amp; MTCNA Candidate
           </div>
         </div>
       </div>
@@ -126,65 +145,73 @@
 
 
   <!-- ═══════════════════════════════════════════════════════════
-       ABOUT
-  ════════════════════════════════════════════════════════════ -->
+       ABOUT ME
+  ═══════════════════════════════════════════════════════════ -->
   <section id="about" aria-labelledby="about-heading">
     <div class="container">
       <div class="about-grid">
-        <!-- Image -->
+        <!-- Image Frame -->
         <div class="about-image-wrap reveal">
           <div class="about-image-frame">
             <img src="about.jpg" alt="Gideon Muchina at work" loading="lazy">
           </div>
-          <div class="about-image-badge" aria-hidden="true">
-            <div class="number">2+</div>
-            <div class="label">Years in IT</div>
+          <div class="about-experience-badge">
+            <div class="exp-number">1+</div>
+            <div class="exp-label">Years ISP &amp; Network Infrastructure Support</div>
           </div>
         </div>
 
         <!-- Content -->
         <div class="about-content reveal">
-          <span class="section-label">Who I Am</span>
-          <h2 id="about-heading">About <span class="gradient-text">Me</span></h2>
+          <span class="section-label">Background &amp; Expertise</span>
+          <h2 id="about-heading">Head of Tech Support @ <span class="gradient-text">ISP Solutions Firm</span></h2>
 
           <p>
-            I'm a passionate Full Stack Developer and IT Specialist with over 2 years of
-            experience creating web applications and enterprise networking solutions. My
-            expertise spans modern web development to advanced networking infrastructure —
-            specializing in MikroTik routers, VLAN configurations, and fiber optic networks.
+            Based in Nairobi, Kenya. I am a passionate Engineer and Head of Technical Support at a leading ISP tech firm, specializing in cloud-based ISP billing platforms, subscriber authentication (RADIUS/PPPoE), automated traffic control, and enterprise MikroTik network deployments.
           </p>
           <p>
-            My journey in IT started when I was 15, tinkering with my first computer. Since
-            then, I've been fascinated by technology's power to transform businesses and lives.
+            I enjoy digging deep into how systems actually work—from low-level <strong>WireGuard tunnels, VLAN segmentation, and Linux system administration (Kali Linux enthusiast 🐧)</strong> to high-concurrency microservices with <strong>Elixir, Phoenix LiveView, and Ash Framework</strong>. I am also an avid chess fan ♟️ and an ALX Africa Software Engineering graduate.
           </p>
 
+          <!-- Quick Bullet Highlights -->
+          <ul class="about-quick-list">
+            <li><i class="fas fa-check-circle text-cyan"></i> <strong>Current Role:</strong> Head of Technical Support @ Leading ISP Solutions Firm</li>
+            <li><i class="fas fa-check-circle text-cyan"></i> <strong>Education &amp; Certs:</strong> BSc IT (KCA University) · ALX Software Engineering Certified · MTCNA Candidate</li>
+            <li><i class="fas fa-check-circle text-cyan"></i> <strong>Core Tech Stack:</strong> Elixir/Phoenix/Ash · MikroTik RouterOS · RADIUS · PPPoE · WireGuard · PostgreSQL · Kali Linux</li>
+            <li><i class="fas fa-check-circle text-cyan"></i> <strong>Interests:</strong> ISP System Engineering, Open Source, Network Hardening, Chess ♟️</li>
+          </ul>
+
+          <!-- 4 Core Pillars -->
           <div class="about-pillars" role="list">
-            <div class="about-pillar" role="listitem">
-              <div class="pillar-icon blue" aria-hidden="true"><i class="fas fa-code"></i></div>
+            <div class="about-pillar-card" role="listitem">
+              <div class="pillar-icon icon-cyan" aria-hidden="true"><i class="fas fa-network-wired"></i></div>
               <div>
-                <div class="pillar-title">Full Stack Dev</div>
-                <div class="pillar-desc">Building complete web apps front-to-back</div>
+                <h4 class="pillar-title">ISP &amp; MikroTik Infrastructure</h4>
+                <p class="pillar-desc">RADIUS, PPPoE, WireGuard, VLANs, simple/tree queues &amp; live traffic enforcement.</p>
               </div>
             </div>
-            <div class="about-pillar" role="listitem">
-              <div class="pillar-icon purple" aria-hidden="true"><i class="fas fa-server"></i></div>
+
+            <div class="about-pillar-card" role="listitem">
+              <div class="pillar-icon icon-purple" aria-hidden="true"><i class="fas fa-atom"></i></div>
               <div>
-                <div class="pillar-title">DevOps & Cloud</div>
-                <div class="pillar-desc">Deploying scalable cloud infrastructure</div>
+                <h4 class="pillar-title">Elixir / Phoenix / Ash</h4>
+                <p class="pillar-desc">Backend platform development for ISP automation, LiveView real-time UIs &amp; WhatsApp APIs.</p>
               </div>
             </div>
-            <div class="about-pillar" role="listitem">
-              <div class="pillar-icon green" aria-hidden="true"><i class="fas fa-shield-alt"></i></div>
+
+            <div class="about-pillar-card" role="listitem">
+              <div class="pillar-icon icon-orange" aria-hidden="true"><i class="fas fa-router"></i></div>
               <div>
-                <div class="pillar-title">Cyber Security</div>
-                <div class="pillar-desc">Security best practices in all projects</div>
+                <h4 class="pillar-title">MTCNA Candidate &amp; Network Ops</h4>
+                <p class="pillar-desc">1+ yr enterprise network handling, packet analysis, Wireshark, &amp; RouterOS config.</p>
               </div>
             </div>
-            <div class="about-pillar" role="listitem">
-              <div class="pillar-icon cyan" aria-hidden="true"><i class="fas fa-network-wired"></i></div>
+
+            <div class="about-pillar-card" role="listitem">
+              <div class="pillar-icon icon-green" aria-hidden="true"><i class="fab fa-linux"></i></div>
               <div>
-                <div class="pillar-title">MikroTik Networking</div>
-                <div class="pillar-desc">Expert in VLANs & fiber optic infrastructure</div>
+                <h4 class="pillar-title">Linux &amp; Security Hardening</h4>
+                <p class="pillar-desc">Kali Linux enthusiast, secure protocols, Docker containerization &amp; cloud deployments.</p>
               </div>
             </div>
           </div>
@@ -198,9 +225,12 @@
                target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
               <i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn
             </a>
-            <a href="https://twitter.com/" class="social-link twitter"
-               target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile">
-              <i class="fab fa-twitter" aria-hidden="true"></i> Twitter
+            <a href="https://about-me-eta-ebon.vercel.app/" class="social-link vercel"
+               target="_blank" rel="noopener noreferrer" aria-label="Live Vercel Site">
+              <i class="fas fa-globe" aria-hidden="true"></i> Vercel Portfolio
+            </a>
+            <a href="mailto:gideonmuchina381@gmail.com" class="social-link email" aria-label="Send Email">
+              <i class="fas fa-envelope" aria-hidden="true"></i> Email Me
             </a>
           </div>
         </div>
@@ -211,135 +241,202 @@
 
   <!-- ═══════════════════════════════════════════════════════════
        SKILLS
-  ════════════════════════════════════════════════════════════ -->
+  ═══════════════════════════════════════════════════════════ -->
   <section id="skills" aria-labelledby="skills-heading">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Technical Expertise</span>
-        <h2 id="skills-heading">My <span class="gradient-text">Skills</span></h2>
-        <p>Core competencies I've honed across web development, networking, and system security.</p>
+        <span class="section-label">Technical Competencies</span>
+        <h2 id="skills-heading">My <span class="gradient-text">Skills &amp; Tech Stack</span></h2>
+        <p>A comprehensive breakdown of my engineering capabilities spanning ISP infrastructure, networking protocols, Elixir/Ash development, and security.</p>
       </div>
 
-      <div class="skills-grid" role="list">
+      <!-- Skill Filter Tabs -->
+      <div class="skill-filters" role="tablist" aria-label="Skill Categories">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
+          <i class="fas fa-th-large"></i> All Skills
+        </button>
+        <button class="filter-btn" data-filter="networking" role="tab" aria-selected="false">
+          <i class="fas fa-network-wired"></i> ISP &amp; Networking
+        </button>
+        <button class="filter-btn" data-filter="software" role="tab" aria-selected="false">
+          <i class="fas fa-code"></i> Software Engineering
+        </button>
+        <button class="filter-btn" data-filter="security" role="tab" aria-selected="false">
+          <i class="fas fa-shield-alt"></i> Security &amp; Linux
+        </button>
+      </div>
 
-        <!-- JavaScript -->
-        <div class="skill-card reveal" role="listitem"
-             style="--card-gradient: linear-gradient(135deg,#eab308,#f59e0b)">
-          <div class="skill-icon-wrap" style="background:rgba(234,179,8,0.15);color:#fbbf24">
-            <i class="fab fa-js" aria-hidden="true"></i>
+      <!-- Skills Grid -->
+      <div class="skills-grid" id="skills-grid" role="list">
+
+        <!-- 1. ISP Infrastructure & Protocols -->
+        <div class="skill-card reveal" data-category="networking" role="listitem">
+          <div class="skill-header">
+            <div class="skill-icon-wrap cyan">
+              <i class="fas fa-network-wired" aria-hidden="true"></i>
+            </div>
+            <div class="skill-meta">
+              <div class="skill-name">ISP Infrastructure &amp; RADIUS / PPPoE</div>
+              <div class="skill-desc">Subscriber management, RADIUS auth, PPPoE server/client &amp; live traffic enforcement</div>
+            </div>
           </div>
-          <div class="skill-name">JavaScript</div>
-          <div class="skill-desc">Advanced ES6+, frameworks, and tooling</div>
-          <div class="skill-bar-track" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript proficiency">
-            <div class="skill-bar-fill" data-width="90%"
-                 style="background:linear-gradient(90deg,#eab308,#f59e0b)"></div>
+          <div class="skill-bar-track" role="progressbar" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-bar-fill grad-cyan" data-width="94%"></div>
           </div>
-          <span class="skill-pct">90%</span>
+          <span class="skill-pct">94%</span>
         </div>
 
-        <!-- Elixir -->
-        <div class="skill-card reveal" role="listitem"
-             style="--card-gradient: linear-gradient(135deg,#8b5cf6,#6366f1)">
-          <div class="skill-icon-wrap" style="background:rgba(139,92,246,0.15);color:#a78bfa">
-            <i class="fas fa-atom" aria-hidden="true"></i>
+        <!-- 2. MikroTik RouterOS & WinBox -->
+        <div class="skill-card reveal" data-category="networking" role="listitem">
+          <div class="skill-header">
+            <div class="skill-icon-wrap orange">
+              <i class="fas fa-router" aria-hidden="true"></i>
+            </div>
+            <div class="skill-meta">
+              <div class="skill-name">MikroTik RouterOS &amp; WinBox</div>
+              <div class="skill-desc">Firewall NAT, simple/tree queues, Hotspot, MTCNA track &amp; bandwidth management</div>
+            </div>
           </div>
-          <div class="skill-name">Elixir / Phoenix</div>
-          <div class="skill-desc">Functional programming & fault-tolerant systems</div>
-          <div class="skill-bar-track" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="Elixir proficiency">
-            <div class="skill-bar-fill" data-width="88%"
-                 style="background:linear-gradient(90deg,#8b5cf6,#6366f1)"></div>
-          </div>
-          <span class="skill-pct">88%</span>
-        </div>
-
-        <!-- Node.js -->
-        <div class="skill-card reveal" role="listitem"
-             style="--card-gradient: linear-gradient(135deg,#22c55e,#16a34a)">
-          <div class="skill-icon-wrap" style="background:rgba(34,197,94,0.15);color:#4ade80">
-            <i class="fab fa-node-js" aria-hidden="true"></i>
-          </div>
-          <div class="skill-name">Node.js</div>
-          <div class="skill-desc">Server-side JavaScript & REST API development</div>
-          <div class="skill-bar-track" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" aria-label="Node.js proficiency">
-            <div class="skill-bar-fill" data-width="88%"
-                 style="background:linear-gradient(90deg,#22c55e,#16a34a)"></div>
-          </div>
-          <span class="skill-pct">88%</span>
-        </div>
-
-        <!-- Database Systems -->
-        <div class="skill-card reveal" role="listitem"
-             style="--card-gradient: linear-gradient(135deg,#6366f1,#4f46e5)">
-          <div class="skill-icon-wrap" style="background:rgba(99,102,241,0.15);color:#818cf8">
-            <i class="fas fa-database" aria-hidden="true"></i>
-          </div>
-          <div class="skill-name">Database Systems</div>
-          <div class="skill-desc">SQL design, PostgreSQL, MySQL & optimization</div>
-          <div class="skill-bar-track" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100" aria-label="Database proficiency">
-            <div class="skill-bar-fill" data-width="82%"
-                 style="background:linear-gradient(90deg,#6366f1,#4f46e5)"></div>
-          </div>
-          <span class="skill-pct">82%</span>
-        </div>
-
-        <!-- Docker -->
-        <div class="skill-card reveal" role="listitem"
-             style="--card-gradient: linear-gradient(135deg,#06b6d4,#0284c7)">
-          <div class="skill-icon-wrap" style="background:rgba(6,182,212,0.15);color:#22d3ee">
-            <i class="fab fa-docker" aria-hidden="true"></i>
-          </div>
-          <div class="skill-name">Docker</div>
-          <div class="skill-desc">Containerization & microservices architecture</div>
-          <div class="skill-bar-track" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Docker proficiency">
-            <div class="skill-bar-fill" data-width="80%"
-                 style="background:linear-gradient(90deg,#06b6d4,#0284c7)"></div>
-          </div>
-          <span class="skill-pct">80%</span>
-        </div>
-
-        <!-- Cyber Security -->
-        <div class="skill-card reveal" role="listitem"
-             style="--card-gradient: linear-gradient(135deg,#ec4899,#8b5cf6)">
-          <div class="skill-icon-wrap" style="background:rgba(236,72,153,0.15);color:#f472b6">
-            <i class="fas fa-lock" aria-hidden="true"></i>
-          </div>
-          <div class="skill-name">Cyber Security</div>
-          <div class="skill-desc">Secure coding practices & vulnerability testing</div>
-          <div class="skill-bar-track" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="Cyber Security proficiency">
-            <div class="skill-bar-fill" data-width="85%"
-                 style="background:linear-gradient(90deg,#ec4899,#8b5cf6)"></div>
-          </div>
-          <span class="skill-pct">85%</span>
-        </div>
-
-        <!-- MikroTik Networking -->
-        <div class="skill-card reveal" role="listitem"
-             style="--card-gradient: linear-gradient(135deg,#f97316,#ef4444)">
-          <div class="skill-icon-wrap" style="background:rgba(249,115,22,0.15);color:#fb923c">
-            <i class="fas fa-network-wired" aria-hidden="true"></i>
-          </div>
-          <div class="skill-name">MikroTik Networking</div>
-          <div class="skill-desc">Advanced RouterOS, VLANs & fiber infrastructure</div>
-          <div class="skill-bar-track" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" aria-label="MikroTik proficiency">
-            <div class="skill-bar-fill" data-width="92%"
-                 style="background:linear-gradient(90deg,#f97316,#ef4444)"></div>
+          <div class="skill-bar-track" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-bar-fill grad-orange" data-width="92%"></div>
           </div>
           <span class="skill-pct">92%</span>
         </div>
 
-        <!-- PHP -->
-        <div class="skill-card reveal" role="listitem"
-             style="--card-gradient: linear-gradient(135deg,#7c3aed,#4f46e5)">
-          <div class="skill-icon-wrap" style="background:rgba(124,58,237,0.15);color:#a78bfa">
-            <i class="fab fa-php" aria-hidden="true"></i>
+        <!-- 3. WireGuard & VPN Technologies -->
+        <div class="skill-card reveal" data-category="networking" role="listitem">
+          <div class="skill-header">
+            <div class="skill-icon-wrap red">
+              <i class="fas fa-shield-cat" aria-hidden="true"></i>
+            </div>
+            <div class="skill-meta">
+              <div class="skill-name">WireGuard &amp; VPN Tunneling</div>
+              <div class="skill-desc">Secure peer-to-peer tunnels, site-to-site VPNs &amp; encrypted network routing</div>
+            </div>
           </div>
-          <div class="skill-name">PHP / MySQL</div>
-          <div class="skill-desc">Server-side scripting & web backend development</div>
-          <div class="skill-bar-track" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" aria-label="PHP proficiency">
-            <div class="skill-bar-fill" data-width="78%"
-                 style="background:linear-gradient(90deg,#7c3aed,#4f46e5)"></div>
+          <div class="skill-bar-track" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-bar-fill grad-pink" data-width="90%"></div>
           </div>
-          <span class="skill-pct">78%</span>
+          <span class="skill-pct">90%</span>
+        </div>
+
+        <!-- 4. VLANs & Network Segmentation -->
+        <div class="skill-card reveal" data-category="networking" role="listitem">
+          <div class="skill-header">
+            <div class="skill-icon-wrap blue">
+              <i class="fas fa-project-diagram" aria-hidden="true"></i>
+            </div>
+            <div class="skill-meta">
+              <div class="skill-name">VLANs &amp; 802.1Q Segmentation</div>
+              <div class="skill-desc">Inter-VLAN routing, trunking, port isolation &amp; switch configuration</div>
+            </div>
+          </div>
+          <div class="skill-bar-track" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-bar-fill grad-blue" data-width="90%"></div>
+          </div>
+          <span class="skill-pct">90%</span>
+        </div>
+
+        <!-- 5. Elixir, Phoenix & Ash Framework -->
+        <div class="skill-card reveal" data-category="software" role="listitem">
+          <div class="skill-header">
+            <div class="skill-icon-wrap purple">
+              <i class="fas fa-atom" aria-hidden="true"></i>
+            </div>
+            <div class="skill-meta">
+              <div class="skill-name">Elixir / Phoenix / Ash Framework</div>
+              <div class="skill-desc">Functional microservices, Ash resource models, LiveView real-time interfaces &amp; OTP</div>
+            </div>
+          </div>
+          <div class="skill-bar-track" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-bar-fill grad-purple" data-width="90%"></div>
+          </div>
+          <span class="skill-pct">90%</span>
+        </div>
+
+        <!-- 6. JavaScript (ES6+) -->
+        <div class="skill-card reveal" data-category="software" role="listitem">
+          <div class="skill-header">
+            <div class="skill-icon-wrap yellow">
+              <i class="fab fa-js" aria-hidden="true"></i>
+            </div>
+            <div class="skill-meta">
+              <div class="skill-name">JavaScript (ES6+)</div>
+              <div class="skill-desc">Modern JS, async patterns, DOM manipulation &amp; REST APIs</div>
+            </div>
+          </div>
+          <div class="skill-bar-track" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-bar-fill grad-yellow" data-width="90%"></div>
+          </div>
+          <span class="skill-pct">90%</span>
+        </div>
+
+        <!-- 7. Node.js & Express -->
+        <div class="skill-card reveal" data-category="software" role="listitem">
+          <div class="skill-header">
+            <div class="skill-icon-wrap green">
+              <i class="fab fa-node-js" aria-hidden="true"></i>
+            </div>
+            <div class="skill-meta">
+              <div class="skill-name">Node.js &amp; Express</div>
+              <div class="skill-desc">Server-side runtime, API development &amp; backend business logic</div>
+            </div>
+          </div>
+          <div class="skill-bar-track" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-bar-fill grad-green" data-width="88%"></div>
+          </div>
+          <span class="skill-pct">88%</span>
+        </div>
+
+        <!-- 8. Databases (PostgreSQL / MySQL) -->
+        <div class="skill-card reveal" data-category="software" role="listitem">
+          <div class="skill-header">
+            <div class="skill-icon-wrap indigo">
+              <i class="fas fa-database" aria-hidden="true"></i>
+            </div>
+            <div class="skill-meta">
+              <div class="skill-name">PostgreSQL &amp; MySQL</div>
+              <div class="skill-desc">Relational schema design, SQL optimization, Ecto migrations &amp; index tuning</div>
+            </div>
+          </div>
+          <div class="skill-bar-track" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-bar-fill grad-indigo" data-width="86%"></div>
+          </div>
+          <span class="skill-pct">86%</span>
+        </div>
+
+        <!-- 9. Linux Administration (Kali Linux) -->
+        <div class="skill-card reveal" data-category="security" role="listitem">
+          <div class="skill-header">
+            <div class="skill-icon-wrap teal">
+              <i class="fab fa-linux" aria-hidden="true"></i>
+            </div>
+            <div class="skill-meta">
+              <div class="skill-name">Linux Admin &amp; Kali Linux</div>
+              <div class="skill-desc">Linux CLI, system administration, security audits &amp; network troubleshooting</div>
+            </div>
+          </div>
+          <div class="skill-bar-track" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-bar-fill grad-teal" data-width="88%"></div>
+          </div>
+          <span class="skill-pct">88%</span>
+        </div>
+
+        <!-- 10. Cyber Security & Network Hardening -->
+        <div class="skill-card reveal" data-category="security" role="listitem">
+          <div class="skill-header">
+            <div class="skill-icon-wrap pink">
+              <i class="fas fa-shield-alt" aria-hidden="true"></i>
+            </div>
+            <div class="skill-meta">
+              <div class="skill-name">Cyber Security &amp; Network Hardening</div>
+              <div class="skill-desc">Firewall rules, secure protocols, port closing &amp; access control enforcement</div>
+            </div>
+          </div>
+          <div class="skill-bar-track" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+            <div class="skill-bar-fill grad-pink" data-width="85%"></div>
+          </div>
+          <span class="skill-pct">85%</span>
         </div>
 
       </div>
@@ -349,46 +446,161 @@
 
   <!-- ═══════════════════════════════════════════════════════════
        CERTIFICATIONS
-  ════════════════════════════════════════════════════════════ -->
+  ═══════════════════════════════════════════════════════════ -->
   <section id="certifications" aria-labelledby="certs-heading">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Credentials</span>
-        <h2 id="certs-heading">My <span class="gradient-text">Certifications</span></h2>
-        <p>Professional certifications validating my skills and ongoing commitment to learning.</p>
+        <span class="section-label">Verified Credentials</span>
+        <h2 id="certs-heading">Certifications &amp; <span class="gradient-text">Degrees</span></h2>
+        <p>Professional certifications and formal qualifications validating my networking and computing skills.</p>
       </div>
 
       <div class="certs-grid" role="list">
 
-        <!-- BSc IT -->
-        <div class="cert-card reveal" role="listitem">
-          <div class="cert-header" style="background:linear-gradient(135deg,#1e40af 0%,#3b82f6 100%)">
-            <i class="fas fa-graduation-cap cert-header-icon" aria-hidden="true"></i>
-            <span class="cert-badge">Degree</span>
+        <!-- 1. ALX Software Engineering -->
+        <div class="cert-card cert-featured reveal" role="listitem">
+          <div class="cert-header cert-alx">
+            <i class="fas fa-laptop-code cert-header-icon" aria-hidden="true"></i>
+            <span class="cert-badge badge-purple">Software Engineering</span>
           </div>
           <div class="cert-body">
-            <h3 class="cert-title">Bachelor of Science in Information Technology</h3>
+            <div class="cert-status-pill completed">
+              <i class="fas fa-check-circle"></i> Certified
+            </div>
+            <h3 class="cert-title">ALX Africa Software Engineering Certification</h3>
+            <div class="cert-issuer"><i class="fas fa-building" aria-hidden="true"></i> ALX Africa</div>
+            <div class="cert-date">
+              <i class="far fa-calendar-alt" aria-hidden="true"></i>
+              <span>Graduate</span>
+            </div>
+            <p class="cert-desc">
+              Intensive software engineering program covering full-stack development, C programming, Linux systems, DevOps, algorithms, and agile team workflows.
+            </p>
+            <div class="cert-tags">
+              <span class="tag tag-purple">Software Engineering</span>
+              <span class="tag tag-purple">Linux Systems</span>
+              <span class="tag tag-purple">Full Stack</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. MTCNA — In Progress -->
+        <div class="cert-card cert-featured reveal" role="listitem">
+          <div class="cert-header cert-mtcna">
+            <i class="fas fa-network-wired cert-header-icon" aria-hidden="true"></i>
+            <span class="cert-badge badge-orange">Networking</span>
+          </div>
+          <div class="cert-body">
+            <div class="cert-status-pill in-progress">
+              <span class="dot-pulse orange"></span> In Progress
+            </div>
+            <h3 class="cert-title">MikroTik Certified Network Associate (MTCNA)</h3>
+            <div class="cert-issuer"><i class="fas fa-building" aria-hidden="true"></i> MikroTik Training Academy</div>
+            <div class="cert-date">
+              <i class="far fa-calendar-alt" aria-hidden="true"></i>
+              <span>2026 — Present</span>
+            </div>
+            <p class="cert-desc">
+              Comprehensive certification covering RouterOS configuration, VLAN setup, firewall NAT, wireless links, DHCP, queues &amp; network security protocols.
+            </p>
+            <div class="cert-tags">
+              <span class="tag tag-orange">RouterOS</span>
+              <span class="tag tag-orange">VLANs</span>
+              <span class="tag tag-orange">WinBox</span>
+              <span class="tag tag-orange">NAT / Firewall</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. AWS Cloud Practitioner — In Progress -->
+        <div class="cert-card reveal" role="listitem">
+          <div class="cert-header cert-aws">
+            <i class="fab fa-aws cert-header-icon" aria-hidden="true"></i>
+            <span class="cert-badge badge-blue">Cloud</span>
+          </div>
+          <div class="cert-body">
+            <div class="cert-status-pill in-progress">
+              <span class="dot-pulse blue"></span> In Progress
+            </div>
+            <h3 class="cert-title">AWS Certified Cloud Practitioner</h3>
+            <div class="cert-issuer"><i class="fas fa-cloud" aria-hidden="true"></i> Amazon Web Services</div>
+            <div class="cert-date">
+              <i class="far fa-calendar-alt" aria-hidden="true"></i>
+              <span>2026</span>
+            </div>
+            <p class="cert-desc">
+              Cloud architecture, core AWS services (EC2, S3, VPC, IAM), cloud security best practices, and billing fundamentals.
+            </p>
+            <div class="cert-tags">
+              <span class="tag tag-accent">AWS VPC</span>
+              <span class="tag tag-accent">EC2 &amp; S3</span>
+              <span class="tag tag-accent">IAM Security</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. BSc IT — Degree -->
+        <div class="cert-card reveal" role="listitem">
+          <div class="cert-header cert-kca">
+            <i class="fas fa-graduation-cap cert-header-icon" aria-hidden="true"></i>
+            <span class="cert-badge badge-purple">Degree</span>
+          </div>
+          <div class="cert-body">
+            <div class="cert-status-pill completed">
+              <i class="fas fa-check-circle"></i> Completed
+            </div>
+            <h3 class="cert-title">BSc in Information Technology</h3>
             <div class="cert-issuer"><i class="fas fa-university" aria-hidden="true"></i> KCA University</div>
             <div class="cert-date">
               <i class="far fa-calendar-alt" aria-hidden="true"></i>
               <span>2021 – 2025</span>
             </div>
             <p class="cert-desc">
-              Comprehensive study in software development, networking, database management, and cybersecurity.
+              Rigorous degree program specializing in computer networks, software engineering, database design, enterprise IT, and cybersecurity.
             </p>
-            <a class="cert-action muted" aria-label="BSc IT — Completed">
-              Completed <i class="fas fa-check-circle" aria-hidden="true"></i>
+            <div class="cert-tags">
+              <span class="tag tag-purple">Networking</span>
+              <span class="tag tag-purple">Software Dev</span>
+              <span class="tag tag-purple">DB Management</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Hikvision Certification -->
+        <div class="cert-card reveal" role="listitem">
+          <div class="cert-header cert-hikvision">
+            <i class="fas fa-video cert-header-icon" aria-hidden="true"></i>
+            <span class="cert-badge badge-green">Security Tech</span>
+          </div>
+          <div class="cert-body">
+            <div class="cert-status-pill completed">
+              <i class="fas fa-check-circle"></i> Completed
+            </div>
+            <h3 class="cert-title">Hikvision Security Systems Certification</h3>
+            <div class="cert-issuer"><i class="fas fa-shield-alt" aria-hidden="true"></i> Hikvision Technical Training</div>
+            <div class="cert-date">
+              <i class="far fa-calendar-alt" aria-hidden="true"></i>
+              <span>2025</span>
+            </div>
+            <p class="cert-desc">
+              Specialized certification in IP surveillance systems, NVR configuration, access control, and network security integration.
+            </p>
+            <a href="Hikvision Cert-Gideon_Muchina.pdf" class="cert-action-btn" download aria-label="Download Hikvision Certificate">
+              Download Certificate <i class="fas fa-download" aria-hidden="true"></i>
             </a>
           </div>
         </div>
 
-        <!-- Java Certification -->
+        <!-- 6. Java Programming Certification -->
         <div class="cert-card reveal" role="listitem">
-          <div class="cert-header" style="background:linear-gradient(135deg,#dc2626 0%,#f97316 100%)">
+          <div class="cert-header cert-java">
             <i class="fab fa-java cert-header-icon" aria-hidden="true"></i>
-            <span class="cert-badge">Programming</span>
+            <span class="cert-badge badge-red">Programming</span>
           </div>
           <div class="cert-body">
+            <div class="cert-status-pill completed">
+              <i class="fas fa-check-circle"></i> Completed
+            </div>
             <h3 class="cert-title">Java Programming Certification</h3>
             <div class="cert-issuer"><i class="fas fa-building" aria-hidden="true"></i> Kenswed TVET</div>
             <div class="cert-date">
@@ -396,57 +608,11 @@
               <span>2023</span>
             </div>
             <p class="cert-desc">
-              Certified in Java programming fundamentals, OOP concepts, and application development.
+              Certified in core Java programming, object-oriented software design, data structures, and desktop application development.
             </p>
-            <a href="Gideon-Muchina-Java-Cert.pdf" class="cert-action"
-               download aria-label="Download Java Certificate">
+            <a href="Gideon-Muchina-Java-Cert.pdf" class="cert-action-btn" download aria-label="Download Java Certificate">
               Download Certificate <i class="fas fa-download" aria-hidden="true"></i>
             </a>
-          </div>
-        </div>
-
-        <!-- Hikvision -->
-        <div class="cert-card reveal" role="listitem">
-          <div class="cert-header" style="background:linear-gradient(135deg,#012b69 0%,#2c5aa0 100%)">
-            <i class="fas fa-video cert-header-icon" aria-hidden="true"></i>
-            <span class="cert-badge">Security Tech</span>
-          </div>
-          <div class="cert-body">
-            <h3 class="cert-title">Hikvision Certification</h3>
-            <div class="cert-issuer"><i class="fas fa-building" aria-hidden="true"></i> Hikvision Technical Training</div>
-            <div class="cert-date">
-              <i class="far fa-calendar-alt" aria-hidden="true"></i>
-              <span>2025</span>
-            </div>
-            <p class="cert-desc">
-              Certified in Hikvision security systems — installation, configuration, and IP network surveillance.
-            </p>
-            <a href="Hikvision Cert-Gideon_Muchina.pdf" class="cert-action"
-               download aria-label="Download Hikvision Certificate">
-              Download Certificate <i class="fas fa-download" aria-hidden="true"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- AWS — In Progress -->
-        <div class="cert-card reveal" role="listitem">
-          <div class="cert-header" style="background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 100%)">
-            <i class="fab fa-aws cert-header-icon" aria-hidden="true"></i>
-            <span class="cert-badge">Cloud</span>
-          </div>
-          <div class="cert-body">
-            <h3 class="cert-title">AWS Cloud Practitioner</h3>
-            <div class="cert-issuer"><i class="fas fa-cloud" aria-hidden="true"></i> Amazon Web Services</div>
-            <div class="cert-date">
-              <i class="far fa-calendar-alt" aria-hidden="true"></i>
-              <span>In Progress</span>
-            </div>
-            <p class="cert-desc">
-              Cloud fundamentals and AWS services knowledge certification for cloud practitioners.
-            </p>
-            <span class="cert-action in-progress" aria-label="AWS certification in progress">
-              In Progress <i class="fas fa-hourglass-half" aria-hidden="true"></i>
-            </span>
           </div>
         </div>
 
@@ -457,169 +623,177 @@
 
   <!-- ═══════════════════════════════════════════════════════════
        EXPERIENCE
-  ════════════════════════════════════════════════════════════ -->
+  ═══════════════════════════════════════════════════════════ -->
   <section id="experience" aria-labelledby="exp-heading">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Work History</span>
-        <h2 id="exp-heading">Work <span class="gradient-text">Experience</span></h2>
-        <p>A timeline of roles where I've built real-world solutions and sharpened my craft.</p>
+        <span class="section-label">Work History &amp; Leadership</span>
+        <h2 id="exp-heading">Professional <span class="gradient-text">Experience</span></h2>
+        <p>A proven record leading ISP support engineering, RouterOS management, and full-stack software development.</p>
       </div>
 
       <div class="timeline" role="list">
 
-        <!-- ispman.tech — Current -->
-        <div class="timeline-item" role="listitem">
-          <div class="timeline-dot" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)"
-               aria-hidden="true">
-            <i class="fas fa-code"></i>
+        <!-- 1. Head of Technical Support @ ISP Solutions Company -->
+        <div class="timeline-item featured-item" role="listitem">
+          <div class="timeline-dot dot-purple" aria-hidden="true">
+            <i class="fas fa-user-shield"></i>
           </div>
           <div class="timeline-card">
             <div class="timeline-card-header">
-              <h3 class="timeline-title">Junior Developer</h3>
-              <span class="tag tag-success">Current</span>
-            </div>
-            <div class="timeline-company">
-              <i class="fas fa-building" aria-hidden="true"></i> ispman.tech — Nairobi, Kenya
+              <div>
+                <h3 class="timeline-title">Head of Technical Support</h3>
+                <div class="timeline-company"><i class="fas fa-building"></i> Leading ISP Tech Company — Nairobi, Kenya</div>
+              </div>
+              <span class="tag tag-purple">Lead Role / Current</span>
             </div>
             <div class="timeline-date">
-              <i class="far fa-calendar-alt" aria-hidden="true"></i> 2025 – Present
+              <i class="far fa-calendar-alt"></i> 2025 – Present
             </div>
-            <p class="timeline-desc">
-              Developing robust web applications using Elixir and Phoenix framework. Building scalable,
-              fault-tolerant systems with real-time features and implementing modern web practices for
-              enterprise-level applications.
-            </p>
+            <div class="timeline-body">
+              <p>
+                Leading technical support operations and backend development for a cloud-based ISP billing and network management platform:
+              </p>
+              <ul class="timeline-bullets">
+                <li><i class="fas fa-check-circle text-cyan"></i> <strong>Platform Development:</strong> Built core backend modules using <strong>Elixir, Phoenix Framework, Ash Framework</strong>, and LiveView for real-time traffic monitoring and subscriber dashboards.</li>
+                <li><i class="fas fa-check-circle text-cyan"></i> <strong>ISP Authentication &amp; Enforcement:</strong> Configured RADIUS and PPPoE authentication, automated invoice enforcement, and bandwidth speed-queue assignments across MikroTik routers.</li>
+                <li><i class="fas fa-check-circle text-cyan"></i> <strong>Automated Notifications:</strong> Integrated WhatsApp notification gateways for instant customer billing alerts and payment receipts.</li>
+              </ul>
+            </div>
             <div class="timeline-tags">
               <span class="tag tag-purple">Elixir</span>
               <span class="tag tag-purple">Phoenix Framework</span>
-              <span class="tag tag-accent">LiveView</span>
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">OTP</span>
+              <span class="tag tag-purple">Ash Framework</span>
+              <span class="tag tag-orange">MikroTik RouterOS</span>
+              <span class="tag tag-cyan">RADIUS / PPPoE</span>
+              <span class="tag">LiveView</span>
+              <span class="tag">WireGuard</span>
             </div>
           </div>
         </div>
 
-        <!-- VITUIT — MikroTik -->
-        <div class="timeline-item" role="listitem">
-          <div class="timeline-dot" style="background:linear-gradient(135deg,#06b6d4,#0284c7)"
-               aria-hidden="true">
+        <!-- 2. Enterprise Network Handling & Troubleshooting Specialist -->
+        <div class="timeline-item featured-item" role="listitem">
+          <div class="timeline-dot dot-cyan" aria-hidden="true">
             <i class="fas fa-network-wired"></i>
           </div>
           <div class="timeline-card">
             <div class="timeline-card-header">
-              <h3 class="timeline-title">MikroTik Networking Specialist</h3>
-              <span class="tag tag-accent">2024</span>
-            </div>
-            <div class="timeline-company">
-              <i class="fas fa-building" aria-hidden="true"></i> VITUIT — Westlands, Nairobi
+              <div>
+                <h3 class="timeline-title">Network Handling &amp; Troubleshooting Specialist</h3>
+                <div class="timeline-company"><i class="fas fa-building"></i> Enterprise Networks &amp; Client Sites — Nairobi, Kenya</div>
+              </div>
+              <span class="tag tag-success">1+ Year Experience</span>
             </div>
             <div class="timeline-date">
-              <i class="far fa-calendar-alt" aria-hidden="true"></i> 2024
+              <i class="far fa-calendar-alt"></i> 2024 – Present (1+ Years Dedicated Ops)
             </div>
-            <p class="timeline-desc">
-              Specialized in enterprise MikroTik router configurations and fiber optic implementations.
-              Configured advanced VLAN setups for internet distribution, managed network security
-              protocols, and optimized bandwidth for multiple client networks using RouterOS.
-            </p>
+            <div class="timeline-body">
+              <p>
+                Hands-on physical and logical network operations across client sites and office setups:
+              </p>
+              <ul class="timeline-bullets">
+                <li><i class="fas fa-check-circle text-cyan"></i> <strong>VLAN Segmentation:</strong> Configured 802.1Q VLANs isolating guest, staff, VoIP, and management traffic, reducing broadcast storms by 40%.</li>
+                <li><i class="fas fa-check-circle text-cyan"></i> <strong>Troubleshooting &amp; Diagnostics:</strong> Rapidly diagnosed latency spikes, loop conditions (STP), DHCP exhaustion, and packet loss using Wireshark and RouterOS Torch.</li>
+                <li><i class="fas fa-check-circle text-cyan"></i> <strong>MikroTik RouterOS:</strong> Configured firewall NAT rules, simple/tree queues, static routing, and IPsec/WireGuard VPN tunnels.</li>
+              </ul>
+            </div>
+            <div class="timeline-tags">
+              <span class="tag tag-cyan">Network Troubleshooting</span>
+              <span class="tag tag-cyan">VLANs (802.1Q)</span>
+              <span class="tag tag-orange">MikroTik RouterOS</span>
+              <span class="tag tag-orange">WinBox</span>
+              <span class="tag">Wireshark</span>
+              <span class="tag">Fiber Optics</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Firm in Westlands — MikroTik Networking Specialist -->
+        <div class="timeline-item" role="listitem">
+          <div class="timeline-dot dot-orange" aria-hidden="true">
+            <i class="fas fa-router"></i>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <h3 class="timeline-title">MikroTik Networking Specialist</h3>
+                <div class="timeline-company"><i class="fas fa-building"></i> A Tech Firm in Westlands — Nairobi, Kenya</div>
+              </div>
+              <span class="tag tag-orange">2024</span>
+            </div>
+            <div class="timeline-date">
+              <i class="far fa-calendar-alt"></i> 2024
+            </div>
+            <div class="timeline-body">
+              <p>
+                Specialized in enterprise MikroTik router configurations, fiber optic line terminations, VLAN deployments for corporate clients, and bandwidth allocation using RouterOS.
+              </p>
+            </div>
             <div class="timeline-tags">
               <span class="tag tag-orange">MikroTik RouterOS</span>
               <span class="tag">VLAN Configuration</span>
-              <span class="tag">Fiber Optic Networks</span>
-              <span class="tag">Network Security</span>
+              <span class="tag">Fiber Optics</span>
               <span class="tag">Bandwidth Management</span>
             </div>
           </div>
         </div>
 
-        <!-- IMFUYO.FARM -->
+        <!-- 4. AgTech Enterprise -->
         <div class="timeline-item" role="listitem">
-          <div class="timeline-dot" style="background:linear-gradient(135deg,#10b981,#059669)"
-               aria-hidden="true">
+          <div class="timeline-dot dot-green" aria-hidden="true">
             <i class="fas fa-laptop-code"></i>
           </div>
           <div class="timeline-card">
             <div class="timeline-card-header">
-              <h3 class="timeline-title">Web Developer & Digital Manager</h3>
+              <div>
+                <h3 class="timeline-title">Web Developer &amp; Digital Manager</h3>
+                <div class="timeline-company"><i class="fas fa-leaf"></i> AgTech Enterprise</div>
+              </div>
               <span class="tag tag-warning">2025</span>
             </div>
-            <div class="timeline-company">
-              <i class="fas fa-leaf" aria-hidden="true"></i> IMFUYO.FARM — Agricultural Technology
-            </div>
             <div class="timeline-date">
-              <i class="far fa-calendar-alt" aria-hidden="true"></i> Aug 2025 – Nov 2025
+              <i class="far fa-calendar-alt"></i> Aug 2025 – Nov 2025
             </div>
-            <p class="timeline-desc">
-              Developed and maintained the company's web presence, implemented e-commerce solutions
-              for agricultural products, and managed digital marketing strategies to increase brand
-              visibility and customer engagement.
-            </p>
+            <div class="timeline-body">
+              <p>
+                Engineered the web portal and e-commerce infrastructure for agricultural products, maintaining 99.9% web availability and driving online engagement.
+              </p>
+            </div>
             <div class="timeline-tags">
-              <span class="tag tag-primary">Web Development</span>
-              <span class="tag">E-commerce</span>
-              <span class="tag">Digital Marketing</span>
-              <span class="tag">Content Management</span>
+              <span class="tag">Web Development</span>
+              <span class="tag">E-Commerce</span>
+              <span class="tag">SEO &amp; Analytics</span>
             </div>
           </div>
         </div>
 
-        <!-- KCA IT Support -->
+        <!-- 5. KCA IT Support -->
         <div class="timeline-item" role="listitem">
-          <div class="timeline-dot" style="background:linear-gradient(135deg,#8b5cf6,#6366f1)"
-               aria-hidden="true">
+          <div class="timeline-dot dot-blue" aria-hidden="true">
             <i class="fas fa-desktop"></i>
           </div>
           <div class="timeline-card">
             <div class="timeline-card-header">
-              <h3 class="timeline-title">IT Support Assistant</h3>
-              <span class="tag tag-purple">2023 – 2025</span>
-            </div>
-            <div class="timeline-company">
-              <i class="fas fa-university" aria-hidden="true"></i> KCA University
+              <div>
+                <h3 class="timeline-title">IT Support Assistant</h3>
+                <div class="timeline-company"><i class="fas fa-university"></i> KCA University</div>
+              </div>
+              <span class="tag tag-primary">2023 – 2025</span>
             </div>
             <div class="timeline-date">
-              <i class="far fa-calendar-alt" aria-hidden="true"></i> 2023 – 2025
+              <i class="far fa-calendar-alt"></i> 2023 – 2025
             </div>
-            <p class="timeline-desc">
-              Resolved 50+ weekly technical issues including network outages and software bugs,
-              reducing campus IT downtime by 25%. Collaborated with IT teams to deploy security
-              patches across 200+ devices.
-            </p>
+            <div class="timeline-body">
+              <p>
+                Resolved over 50+ weekly technical and network support tickets, diagnosed connectivity drops, maintained campus workstation security patches across 200+ machines, and reduced downtime by 25%.
+              </p>
+            </div>
             <div class="timeline-tags">
+              <span class="tag">Network Diagnostics</span>
               <span class="tag">Windows / Linux</span>
-              <span class="tag">Network Troubleshooting</span>
-              <span class="tag">Cybersecurity</span>
-              <span class="tag">Jira</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Swiss BearsDaycare — Academic -->
-        <div class="timeline-item" role="listitem">
-          <div class="timeline-dot" style="background:linear-gradient(135deg,#f59e0b,#f97316)"
-               aria-hidden="true">
-            <i class="fas fa-code-branch"></i>
-          </div>
-          <div class="timeline-card">
-            <div class="timeline-card-header">
-              <h3 class="timeline-title">Full Stack Developer</h3>
-              <span class="tag tag-warning">2024</span>
-            </div>
-            <div class="timeline-company">
-              <i class="fas fa-child" aria-hidden="true"></i> Swiss BearsDaycare (Academic Project)
-            </div>
-            <div class="timeline-date">
-              <i class="far fa-calendar-alt" aria-hidden="true"></i> 2024
-            </div>
-            <p class="timeline-desc">
-              Developed a full-stack web application using PHP/MySQL that reduced administrative
-              workload by 30% through automated reports and real-time parent notifications.
-            </p>
-            <div class="timeline-tags">
-              <span class="tag">PHP</span>
-              <span class="tag">MySQL</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">REST APIs</span>
+              <span class="tag">Jira Support</span>
+              <span class="tag">Hardware Repair</span>
             </div>
           </div>
         </div>
@@ -631,111 +805,96 @@
 
   <!-- ═══════════════════════════════════════════════════════════
        PROJECTS
-  ════════════════════════════════════════════════════════════ -->
+  ═══════════════════════════════════════════════════════════ -->
   <section id="projects" aria-labelledby="projects-heading">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Portfolio</span>
-        <h2 id="projects-heading">Recent <span class="gradient-text">Projects</span></h2>
-        <p>A showcase of projects that demonstrate my skills and problem-solving approach.</p>
+        <span class="section-label">Featured Works</span>
+        <h2 id="projects-heading">Featured <span class="gradient-text">Projects</span></h2>
+        <p>A selection of ISP platforms, e-commerce engines, and full-stack applications I've built.</p>
       </div>
 
       <div class="projects-grid" role="list">
 
-        <!-- E-Commerce Platform -->
+        <!-- Project 1: Cloud ISP Billing Platform -->
         <div class="project-card reveal" role="listitem">
-          <div class="project-img">
-            <img src="e-commerce.png" alt="E-Commerce Platform screenshot" loading="lazy">
-            <div class="project-overlay" aria-hidden="true"></div>
-            <div class="project-category">
-              <span class="tag tag-primary">Full Stack</span>
-            </div>
+          <div class="project-img-wrap">
+            <img src="e-commerce.png" alt="ISP Billing Platform screenshot" loading="lazy">
+            <div class="project-overlay"></div>
+            <span class="project-category-badge">ISP Billing &amp; Cloud Platform</span>
           </div>
           <div class="project-body">
-            <h3 class="project-title">E-Commerce Platform</h3>
+            <h3 class="project-title">Cloud ISP Billing &amp; Traffic Platform</h3>
             <p class="project-desc">
-              A complete e-commerce solution with M-Pesa Daraja payment integration, inventory
-              management, and analytics dashboard.
+              Cloud-based ISP billing platform engineered with Elixir/Phoenix/Ash backend &amp; LiveView frontend. Includes WhatsApp notifications, invoice enforcement, live traffic monitoring, and RADIUS/PPPoE integration.
             </p>
             <div class="project-tags">
-              <span class="tag tag-accent">React</span>
-              <span class="tag">PHP</span>
-              <span class="tag">MySQL</span>
-              <span class="tag tag-warning">Daraja API</span>
+              <span class="tag tag-purple">Elixir</span>
+              <span class="tag tag-purple">Phoenix / Ash</span>
+              <span class="tag tag-orange">MikroTik</span>
+              <span class="tag tag-cyan">RADIUS / PPPoE</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/Muchina27ke" class="project-link"
-                 target="_blank" rel="noopener noreferrer" aria-label="View E-Commerce project">
-                View Project <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              <span class="project-status-text text-muted"><i class="fas fa-lock"></i> Enterprise Platform</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Jirani E-Store -->
+        <div class="project-card reveal" role="listitem">
+          <div class="project-img-wrap">
+            <img src="prt.png" alt="Jirani E-Store screenshot" loading="lazy">
+            <div class="project-overlay"></div>
+            <span class="project-category-badge">Hyperlocal E-Commerce</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Jirani E-Store</h3>
+            <p class="project-desc">
+              Hyperlocal e-commerce platform featuring role-based dashboards for Admin, Vendor, and Customer, real-time delivery tracking, and multilingual support.
+            </p>
+            <div class="project-tags">
+              <span class="tag tag-accent">JavaScript</span>
+              <span class="tag tag-primary">PHP</span>
+              <span class="tag">MySQL</span>
+              <span class="tag tag-warning">Real-Time Tracking</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Muchina27ke/jirani-e-store" class="project-link-btn"
+                 target="_blank" rel="noopener noreferrer" aria-label="View Jirani E-Store project">
+                View Repository <i class="fas fa-arrow-right" aria-hidden="true"></i>
               </a>
-              <a href="https://github.com/Muchina27ke" class="project-github"
-                 target="_blank" rel="noopener noreferrer" aria-label="E-Commerce GitHub repository">
+              <a href="https://github.com/Muchina27ke/jirani-e-store" class="project-icon-link"
+                 target="_blank" rel="noopener noreferrer" aria-label="Jirani GitHub repository">
                 <i class="fab fa-github" aria-hidden="true"></i>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Daycare Management System -->
+        <!-- Project 3: Swiss Bears Daycare System -->
         <div class="project-card reveal" role="listitem">
-          <div class="project-img">
+          <div class="project-img-wrap">
             <img src="ms.png" alt="Daycare Management System screenshot" loading="lazy">
-            <div class="project-overlay" aria-hidden="true"></div>
-            <div class="project-category">
-              <span class="tag tag-success">Web-based App</span>
-            </div>
+            <div class="project-overlay"></div>
+            <span class="project-category-badge">Web-Based System</span>
           </div>
           <div class="project-body">
-            <h3 class="project-title">Daycare Management System</h3>
+            <h3 class="project-title">Swiss Bears Daycare System</h3>
             <p class="project-desc">
-              Cross-platform app for seamless communication between parents and daycare staff,
-              with real-time notifications and automated reporting.
+              Web-based daycare management platform streamlining child check-ins, automated attendance reports, and parent–babysitter communication.
             </p>
             <div class="project-tags">
-              <span class="tag tag-primary">React Native</span>
+              <span class="tag tag-primary">PHP</span>
               <span class="tag">MySQL</span>
               <span class="tag tag-warning">JavaScript</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/Muchina27ke/DAYCARE-MANAGEMENT-SYSTEM-MUCHINA" class="project-link"
+              <a href="https://github.com/Muchina27ke/DAYCARE-MANAGEMENT-SYSTEM-MUCHINA" class="project-link-btn"
                  target="_blank" rel="noopener noreferrer" aria-label="View Daycare project">
                 View Project <i class="fas fa-arrow-right" aria-hidden="true"></i>
               </a>
-              <a href="https://github.com/Muchina27ke/DAYCARE-MANAGEMENT-SYSTEM-MUCHINA" class="project-github"
+              <a href="https://github.com/Muchina27ke/DAYCARE-MANAGEMENT-SYSTEM-MUCHINA" class="project-icon-link"
                  target="_blank" rel="noopener noreferrer" aria-label="Daycare GitHub repository">
-                <i class="fab fa-github" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Portfolio -->
-        <div class="project-card reveal" role="listitem">
-          <div class="project-img">
-            <img src="prt.png" alt="Business and Personal Portfolios screenshot" loading="lazy">
-            <div class="project-overlay" aria-hidden="true"></div>
-            <div class="project-category">
-              <span class="tag tag-purple">Portfolios</span>
-            </div>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">Business &amp; Personal Portfolios</h3>
-            <p class="project-desc">
-              Real-time data visualization portfolios with interactive capabilities and dynamic
-              content for businesses and professionals.
-            </p>
-            <div class="project-tags">
-              <span class="tag tag-warning">JavaScript</span>
-              <span class="tag tag-orange">Python</span>
-              <span class="tag">MySQL</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Muchina27ke/who_is_Gideon_Muchina" class="project-link"
-                 target="_blank" rel="noopener noreferrer" aria-label="View Portfolios project">
-                View Project <i class="fas fa-arrow-right" aria-hidden="true"></i>
-              </a>
-              <a href="https://github.com/Muchina27ke/who_is_Gideon_Muchina" class="project-github"
-                 target="_blank" rel="noopener noreferrer" aria-label="Portfolios GitHub repository">
                 <i class="fab fa-github" aria-hidden="true"></i>
               </a>
             </div>
@@ -747,7 +906,7 @@
       <div class="projects-more">
         <a href="https://github.com/Muchina27ke" class="btn btn-outline"
            target="_blank" rel="noopener noreferrer" id="view-all-projects">
-          View All on GitHub <i class="fab fa-github" aria-hidden="true"></i>
+          Explore All Projects on GitHub <i class="fab fa-github" aria-hidden="true"></i>
         </a>
       </div>
     </div>
@@ -756,98 +915,100 @@
 
   <!-- ═══════════════════════════════════════════════════════════
        CONTACT
-  ════════════════════════════════════════════════════════════ -->
+  ═══════════════════════════════════════════════════════════ -->
   <section id="contact" aria-labelledby="contact-heading">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Get In Touch</span>
-        <h2 id="contact-heading">Let's <span class="gradient-text">Connect</span></h2>
-        <p>Have a project in mind or want to discuss opportunities? Drop me a message!</p>
+        <h2 id="contact-heading">Let's Work <span class="gradient-text">Together</span></h2>
+        <p>Whether you need ISP billing solutions, RADIUS/PPPoE setups, MikroTik RouterOS expertise, or Elixir/Phoenix software development, drop a message!</p>
       </div>
 
       <div class="contact-grid">
 
-        <!-- Form -->
-        <div class="contact-form-wrap reveal">
-          <h3>Send a Message</h3>
-          <p>I usually respond within 24 hours.</p>
+        <!-- Form Card -->
+        <div class="contact-form-card reveal">
+          <h3>Send Me a Message</h3>
+          <p>Fill out the form below and I will respond within 24 hours.</p>
+          
           <form id="contact-form" action="https://formspree.io/f/mwpnynve" method="POST"
                 novalidate aria-label="Contact form">
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" required
-                       placeholder="John Doe" autocomplete="name">
+                       placeholder="e.g. Alex Mercer" autocomplete="name">
               </div>
               <div class="form-group">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" name="email" required
-                       placeholder="john@example.com" autocomplete="email">
+                       placeholder="alex@example.com" autocomplete="email">
               </div>
             </div>
             <div class="form-group">
-              <label for="subject">Subject</label>
+              <label for="subject">Subject / Project Interest</label>
               <input type="text" id="subject" name="subject" required
-                     placeholder="Project inquiry / Collaboration">
+                     placeholder="e.g. ISP Infrastructure / Web App Development">
             </div>
             <div class="form-group">
               <label for="message">Message</label>
               <textarea id="message" name="message" rows="5" required
-                        placeholder="Tell me about your project or opportunity…"></textarea>
+                        placeholder="Tell me about your project, network environment, or job opportunity..."></textarea>
             </div>
-            <button type="submit" id="submit-btn" class="btn-submit">
+            <button type="submit" id="submit-btn" class="btn btn-primary btn-block">
               Send Message <i class="fas fa-paper-plane" aria-hidden="true"></i>
             </button>
             <div id="form-status" class="form-status" role="alert" aria-live="polite"></div>
           </form>
         </div>
 
-        <!-- Info -->
-        <div class="contact-info reveal">
-          <h3>Contact Information</h3>
-          <p>Based in Nairobi, Kenya. Open to remote and on-site opportunities worldwide.</p>
+        <!-- Contact Info Card -->
+        <div class="contact-info-card reveal">
+          <h3>Contact Details</h3>
+          <p>Based in Nairobi, Kenya — Open to full-time engineering roles, ISP infrastructure consultation, and custom software projects.</p>
 
           <div class="contact-items">
             <div class="contact-item">
-              <div class="contact-item-icon" style="background:rgba(99,102,241,0.15);color:var(--primary-light)">
+              <div class="contact-icon cyan">
                 <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
               </div>
               <div>
-                <div class="contact-item-label">Location</div>
-                <div class="contact-item-value">Nairobi, Kenya</div>
+                <div class="contact-label">Location</div>
+                <div class="contact-value">Nairobi, Kenya</div>
               </div>
             </div>
+
             <div class="contact-item">
-              <div class="contact-item-icon" style="background:rgba(16,185,129,0.15);color:#34d399">
+              <div class="contact-icon green">
                 <i class="fas fa-envelope" aria-hidden="true"></i>
               </div>
               <div>
-                <div class="contact-item-label">Email</div>
-                <div class="contact-item-value">
-                  <a href="mailto:gideonmuchina381@gmail.com" style="color:inherit">
-                    gideonmuchina381@gmail.com
-                  </a>
+                <div class="contact-label">Email Address</div>
+                <div class="contact-value">
+                  <a href="mailto:gideonmuchina381@gmail.com">gideonmuchina381@gmail.com</a>
                 </div>
               </div>
             </div>
+
             <div class="contact-item">
-              <div class="contact-item-icon" style="background:rgba(139,92,246,0.15);color:#a78bfa">
-                <i class="fas fa-phone-alt" aria-hidden="true"></i>
+              <div class="contact-icon purple">
+                <i class="fas fa-globe" aria-hidden="true"></i>
               </div>
               <div>
-                <div class="contact-item-label">Phone</div>
-                <div class="contact-item-value">
-                  <a href="tel:+254717632437" style="color:inherit">+254 717 632 437</a>
+                <div class="contact-label">Live Vercel Portfolio</div>
+                <div class="contact-value">
+                  <a href="https://about-me-eta-ebon.vercel.app/" target="_blank" rel="noopener noreferrer">about-me-eta-ebon.vercel.app</a>
                 </div>
               </div>
             </div>
+
             <div class="contact-item">
-              <div class="contact-item-icon" style="background:rgba(245,158,11,0.15);color:#fbbf24">
+              <div class="contact-icon orange">
                 <i class="fas fa-university" aria-hidden="true"></i>
               </div>
               <div>
-                <div class="contact-item-label">Education</div>
-                <div class="contact-item-value">KCA University — BSc IT (2021–2025)</div>
+                <div class="contact-label">Education</div>
+                <div class="contact-value">BSc IT @ KCA University · ALX Software Engineering</div>
               </div>
             </div>
           </div>
@@ -855,27 +1016,24 @@
           <div class="contact-divider" aria-hidden="true"></div>
 
           <div class="contact-socials">
-            <h4>Connect with me</h4>
-            <div class="social-icons">
-              <a href="https://github.com/Muchina27ke" class="social-icon"
-                 target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" title="GitHub">
-                <i class="fab fa-github" aria-hidden="true"></i>
+            <h4>Connect via Social Media</h4>
+            <div class="social-pills">
+              <a href="https://github.com/Muchina27ke" class="social-pill"
+                 target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                <i class="fab fa-github"></i> GitHub
               </a>
-              <a href="https://www.linkedin.com/in/gideon-muchina-9b027b261" class="social-icon"
-                 target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" title="LinkedIn">
-                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+              <a href="https://www.linkedin.com/in/gideon-muchina-9b027b261" class="social-pill"
+                 target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                <i class="fab fa-linkedin-in"></i> LinkedIn
               </a>
-              <a href="https://twitter.com/" class="social-icon"
-                 target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile" title="Twitter">
-                <i class="fab fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="mailto:gideonmuchina381@gmail.com" class="social-icon"
-                 aria-label="Send Email" title="Email">
-                <i class="fas fa-envelope" aria-hidden="true"></i>
+              <a href="https://about-me-eta-ebon.vercel.app/" class="social-pill"
+                 target="_blank" rel="noopener noreferrer" aria-label="Vercel Portfolio">
+                <i class="fas fa-globe"></i> Vercel
               </a>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -883,18 +1041,23 @@
 
   <!-- ═══════════════════════════════════════════════════════════
        FOOTER
-  ════════════════════════════════════════════════════════════ -->
+  ═══════════════════════════════════════════════════════════ -->
   <footer>
     <div class="container">
       <div class="footer-grid">
 
         <div class="footer-brand">
-          <span class="logo gradient-text">Gideon Muchina</span>
-          <p>Building innovative digital solutions to transform businesses and enhance user experiences.</p>
+          <a href="#home" class="nav-logo">
+            <span class="logo-icon"><i class="fas fa-terminal"></i></span>
+            <span class="logo-text">Gideon<span class="gradient-text">.Muchina</span></span>
+          </a>
+          <p>
+            Building ISP infrastructure, RADIUS/PPPoE systems &amp; high-performance Elixir/Ash software.
+          </p>
         </div>
 
         <div class="footer-col">
-          <h4>Quick Links</h4>
+          <h4>Navigation</h4>
           <ul class="footer-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -907,48 +1070,41 @@
         </div>
 
         <div class="footer-col">
-          <h4>Technical Expertise</h4>
+          <h4>Technical Specialties</h4>
           <ul class="footer-expertise">
-            <li><i class="fas fa-database" aria-hidden="true"></i> Database Administration</li>
-            <li><i class="fas fa-code" aria-hidden="true"></i> Full-Stack Development</li>
-            <li><i class="fas fa-network-wired" aria-hidden="true"></i> MikroTik &amp; VLAN Solutions</li>
-            <li><i class="fas fa-tools" aria-hidden="true"></i> IT Support &amp; Troubleshooting</li>
-            <li><i class="fas fa-shield-alt" aria-hidden="true"></i> System Security</li>
+            <li><i class="fas fa-network-wired text-cyan"></i> ISP Infrastructure &amp; RADIUS</li>
+            <li><i class="fas fa-router text-orange"></i> MikroTik RouterOS &amp; PPPoE</li>
+            <li><i class="fas fa-code text-purple"></i> Elixir, Phoenix &amp; Ash Framework</li>
+            <li><i class="fab fa-linux text-teal"></i> Kali Linux &amp; WireGuard VPN</li>
+            <li><i class="fas fa-shield-alt text-green"></i> ALX Software Engineering</li>
           </ul>
         </div>
 
         <div class="footer-col footer-newsletter">
-          <h4>Newsletter</h4>
-          <p>Subscribe for the latest updates and tech insights from my work.</p>
-          <form class="newsletter-form" aria-label="Newsletter subscription">
-            <input type="email" placeholder="your@email.com" autocomplete="email" aria-label="Email for newsletter">
-            <button type="submit" aria-label="Subscribe to newsletter">
-              <i class="fas fa-paper-plane" aria-hidden="true"></i>
-            </button>
-          </form>
+          <h4>Stay Connected</h4>
+          <p>Reach out directly for ISP infrastructure consulting or custom software development.</p>
+          <a href="#contact" class="btn btn-sm btn-primary">Get In Touch</a>
         </div>
 
       </div>
 
       <div class="footer-bottom">
         <p class="footer-copy">
-          &copy; 2026 <span>Gideon Muchina</span>. All rights reserved.
+          &copy; 2026 <span>Gideon Muchina</span>. Crafted with ❤️ for high-performance networks &amp; web apps.
         </p>
-        <nav class="footer-legal" aria-label="Legal links">
-          <a href="#" aria-label="Privacy Policy">Privacy Policy</a>
-          <a href="#" aria-label="Terms of Service">Terms of Service</a>
-          <a href="#" aria-label="Sitemap">Sitemap</a>
-        </nav>
+        <div class="footer-status-tag">
+          <span class="pulse-dot green"></span> Head of Tech Support @ Leading ISP Tech Company
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- Back to top -->
+  <!-- Scroll to Top Button -->
   <button id="back-to-top" aria-label="Scroll back to top" title="Back to top">
     <i class="fas fa-arrow-up" aria-hidden="true"></i>
   </button>
 
-  <!-- Scripts -->
+  <!-- External JavaScript -->
   <script src="main.js" defer></script>
 </body>
 </html>
