@@ -212,6 +212,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ─── Project case studies (modal) ──────────────────────────── */
   const projects = {
+    tuma: {
+      title: 'Tuma X — Bulk SMS with M-Pesa', img: 'tuma-x.jpg',
+      sum: 'Prepaid bulk SMS platform for Kenyan businesses, live at app.muchmwats.online.',
+      problem: 'Small businesses want to text customers (bundle expiries, reminders, vouchers) but are put off by monthly subscriptions, hidden per-message costs and not knowing whether messages were delivered.',
+      approach: [
+        'Prepaid wallet topped up by M-Pesa STK push from KES 10; credit lands as soon as the payment is confirmed.',
+        'Live cost preview: SMS parts (160 / 153 / 70 for Unicode), price per message and total update as you type.',
+        'Delivery reports update statuses on screen in real time; failed or rejected messages are refunded to the wallet automatically.',
+        'Bulk sending: paste hundreds of numbers in common Kenyan formats; they are normalised and de-duplicated.',
+        'API for billing systems, with a signed callback on each delivery — built for ISP reminders and vouchers.',
+      ],
+      outcome: 'A working, public product with transparent KES 0.80-per-part pricing, no monthly fees, and a balance and message history that always reconcile.',
+      stack: ['Elixir', 'Phoenix', 'M-Pesa STK Push', 'REST API', 'Signed webhooks'],
+      links: [['Visit live app', 'https://app.muchmwats.online/', 'fas fa-arrow-up-right-from-square']],
+    },
     isp: {
       title: 'Cloud ISP Billing & Traffic Platform', img: 'isp-platform.svg',
       sum: 'Cloud billing and network-enforcement platform for ISPs.',
@@ -268,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="pm-block"><h4>Outcome</h4><p>${esc(p.outcome)}</p></div>
         <div class="chips">${p.stack.map(s => `<span>${esc(s)}</span>`).join('')}</div>
         ${p.note ? `<p class="tiny">${esc(p.note)}</p>` : ''}
-        <div class="pm-actions">${p.links.map(l => `<a class="btn btn-primary" href="${l[1]}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> ${esc(l[0])}</a>`).join('')}
+        <div class="pm-actions">${p.links.map(l => `<a class="btn btn-primary" href="${l[1]}" target="_blank" rel="noopener noreferrer"><i class="${l[2] || 'fab fa-github'}"></i> ${esc(l[0])}</a>`).join('')}
         <a class="btn btn-ghost" href="#contact" data-close>Discuss this</a></div>
       </div>`;
     modal.showModal();
@@ -293,6 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { label: 'Go to Stack', icon: 'layer-group', hint: 'section', run: go('skills') },
     { label: 'Go to Credentials', icon: 'certificate', hint: 'section', run: go('certifications') },
     { label: 'Go to Contact', icon: 'paper-plane', hint: 'section', run: go('contact') },
+    { label: 'Open: Tuma X (Bulk SMS)', icon: 'comment-sms', hint: 'project', run: () => openProject('tuma') },
     { label: 'Open: Cloud ISP Billing Platform', icon: 'server', hint: 'project', run: () => openProject('isp') },
     { label: 'Open: Jirani E-Store', icon: 'store', hint: 'project', run: () => openProject('jirani') },
     { label: 'Open: Daycare System', icon: 'child', hint: 'project', run: () => openProject('daycare') },
@@ -347,9 +363,9 @@ document.addEventListener('DOMContentLoaded', () => {
     skills: () => print([row('network', 'MikroTik, RADIUS, PPPoE, WireGuard, VLANs, Wireshark'),
       row('software', 'Elixir, Phoenix, Ash, LiveView, JS, Node, PHP, SQL'),
       row('systems', 'Linux/Kali, Docker, hardening, AWS fundamentals')].join('\n')),
-    projects: () => print([row('1 isp', 'Cloud ISP Billing & Traffic Platform'),
-      row('2 jirani', 'Jirani E-Store'), row('3 daycare', 'Swiss Bears Daycare System'),
-      'Run <span class="k">open projects</span> or <span class="k">case isp</span> for details.'].join('\n')),
+    projects: () => print([row('1 tuma', 'Tuma X — Bulk SMS with M-Pesa (live)'), row('2 isp', 'Cloud ISP Billing & Traffic Platform'),
+      row('3 jirani', 'Jirani E-Store'), row('4 daycare', 'Swiss Bears Daycare System'),
+      'Run <span class="k">open projects</span> or <span class="k">case tuma</span> for details.'].join('\n')),
     experience: () => print([row('2025–now', 'Head of Technical Support · ISP firm'),
       row('2024–now', 'Network Troubleshooting Specialist'), row('2024', 'MikroTik Specialist · Westlands'),
       row('2025', 'Web Dev · AgTech'), row('2023–25', 'IT Support · KCA University')].join('\n')),
@@ -378,7 +394,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (map[t]) { print('opening ' + t + '…'); go(map[t])(); } else print('usage: open about|projects|experience|skills|contact', 'err');
     } else if (c === 'case') {
       const id = (args[0] || '').toLowerCase();
-      if (projects[id]) { print('opening case study…'); openProject(id); } else print('usage: case isp|jirani|daycare', 'err');
+      if (projects[id]) { print('opening case study…'); openProject(id); } else print('usage: case tuma|isp|jirani|daycare', 'err');
     } else if (commands[c]) commands[c]();
     else print('command not found: ' + esc(cmd) + '. Try <span class="k">help</span>.', 'err');
     body.scrollTop = body.scrollHeight;

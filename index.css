@@ -213,7 +213,9 @@ h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); letter-spacing: -.02em; line-heigh
 .pillar p { font-size: .82rem; color: var(--muted); line-height: 1.5; }
 
 /* Projects */
-.projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.badge.live { display: inline-flex; align-items: center; gap: 8px; }
+.badge.live .pulse-dot { width: 7px; height: 7px; }
 .project { cursor: pointer; display: flex; flex-direction: column; }
 .project:hover { transform: translateY(-6px); }
 .project-img { position: relative; aspect-ratio: 16/10; overflow: hidden; border-bottom: 1px solid var(--border); }
