@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ─── Project case studies (modal) ──────────────────────────── */
   const projects = {
     isp: {
-      title: 'Cloud ISP Billing & Traffic Platform', img: 'e-commerce.png',
+      title: 'Cloud ISP Billing & Traffic Platform', img: 'isp-platform.svg',
       sum: 'Cloud billing and network-enforcement platform for ISPs.',
       problem: 'ISPs lose revenue and support time when billing, subscriber authentication and bandwidth control live in separate tools and are reconciled by hand.',
       approach: [
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
       note: 'Proprietary enterprise platform — source is private; happy to walk through the architecture in an interview.',
     },
     jirani: {
-      title: 'Jirani E-Store', img: 'prt.png',
+      title: 'Jirani E-Store', img: 'e-commerce.png',
       sum: 'Hyperlocal e-commerce marketplace connecting neighbourhood vendors with customers.',
       problem: 'Small local vendors lack an affordable way to sell online and offer reliable delivery.',
       approach: [

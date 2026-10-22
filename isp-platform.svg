@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Architecture: subscribers, MikroTik, RADIUS, Elixir billing platform, WhatsApp alerts">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0d1424"/><stop offset="1" stop-color="#141b33"/></linearGradient>
+    <linearGradient id="ac" x1="0" x2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+    <marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#22d3ee"/></marker>
+    <style>
+      text{font-family:'JetBrains Mono',ui-monospace,monospace;fill:#e8ecf4}
+      .t{font-size:15px;font-weight:600}.s{font-size:11px;fill:#8d97ab}
+      .n{fill:#111a2e;stroke:#2a3a5c;stroke-width:1.5}.l{stroke:#22d3ee;stroke-width:2;fill:none;marker-end:url(#ar);stroke-dasharray:6 5}
+    </style>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <rect class="n" x="40"  y="150" width="150" height="70" rx="12"/><text x="115" y="182" class="t" text-anchor="middle">Subscribers</text><text x="115" y="202" class="s" text-anchor="middle">PPPoE clients</text>
+  <rect class="n" x="260" y="150" width="150" height="70" rx="12"/><text x="335" y="182" class="t" text-anchor="middle">MikroTik</text><text x="335" y="202" class="s" text-anchor="middle">queues · NAT</text>
+  <rect class="n" x="480" y="150" width="130" height="70" rx="12"/><text x="545" y="182" class="t" text-anchor="middle">RADIUS</text><text x="545" y="202" class="s" text-anchor="middle">auth · limits</text>
+  <rect x="260" y="310" width="350" height="100" rx="14" fill="#111a2e" stroke="url(#ac)" stroke-width="2"/>
+  <text x="435" y="345" class="t" text-anchor="middle">Elixir · Phoenix · Ash</text>
+  <text x="435" y="368" class="s" text-anchor="middle">billing · invoices · enforcement</text>
+  <text x="435" y="388" class="s" text-anchor="middle">LiveView live-traffic dashboard</text>
+  <rect class="n" x="650" y="310" width="120" height="100" rx="12"/><text x="710" y="355" class="t" text-anchor="middle">WhatsApp</text><text x="710" y="376" class="s" text-anchor="middle">invoice alerts</text>
+  <rect class="n" x="40" y="310" width="170" height="100" rx="12"/><text x="125" y="355" class="t" text-anchor="middle">PostgreSQL</text><text x="125" y="376" class="s" text-anchor="middle">subscribers · payments</text>
+
+  <path class="l" d="M190 185 H258"/><path class="l" d="M410 185 H478"/>
+  <path class="l" d="M545 222 V268 H470 V308"/>
+  <path class="l" d="M612 360 H648"/><path class="l" d="M258 360 H212"/>
+</svg>
